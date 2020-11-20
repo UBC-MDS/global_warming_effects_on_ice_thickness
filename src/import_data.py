@@ -1,12 +1,14 @@
-# author: Jayme Gordon
+# author: Group 13
 # date: 2020-11-19
 
-"""This script downloads the ice thickness data set to /data dir
+"""This script downloads a Canadian ice thickness data set
+
 Usage:
-    data_import.py
+    import_data.py [--url=<url>] [--save_dir=<save_dir>]
 
 Options:
-
+    [--url=<url>]             Optionalal url, fallback to default
+    [--save_dir=<save_dir>]   Optional save_dir, must be a directory NOT filename, fallback to default
 """
 
 import pandas as pd
@@ -23,15 +25,51 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 log.addHandler(sh)
 
-# opt = docopt(__doc__)
+opt = docopt(__doc__)
 
-p_data = Path(__file__).parents[1] / 'data/raw/ice_thickness.csv' # set download location
+# set default download dir and url
+file_name = 'ice_thickness.csv'
+save_dir_default = Path(__file__).parents[1] / f'data/raw/{file_name}'
+url_default = 'https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls'
 
-def download_data() -> None:
+def download_data(url : str = None, save_dir : str = None) -> None:
     """Download ice thickness data from url, write to csv in /data dir
-    """    
-    url = 'https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls'
 
+    Parameters
+    ----------
+    url : str, optional
+        url to download data for analysis, default None
+    save_dir : str, optional
+        filepath to save data, default None
+    """    
+    if url is None:
+        url = url_default
+        log.info('No url provided, using default.')
+    
+    # use default, or convert save_dir string to Path obj
+    if save_dir is None:
+        p_data = save_dir_default
+        log.info('No save dir provided, using default.')
+    else:
+        # check user input save dir is valid directory
+        p_dir = Path(save_dir)
+        if not p_dir.suffix == '':
+            log.error(f'save_dir must be a directory.')
+            return
+
+        p_data = p_dir / f'{file_name}'
+        
+        # ask to create directory
+        if not p_dir.exists():
+            ans = _input(msg=f'save_dir "{p_dir}" does not exist, create now?')
+            if not ans:
+                log.info('User declined to create save_dir.')
+                return
+            else:
+                log.info(f'Creating save_dir at {p_dir}')
+                p_dir.mkdir(parents=True)
+
+    # ask if okay to overwrite
     if p_data.exists():
         ans = _input(msg='Data file already exists, overwrite?')
         if not ans:
@@ -39,6 +77,8 @@ def download_data() -> None:
             return
         else:
             log.info('Overwriting data.')
+
+    log.info(f'Downloading data file from: {url}')
 
     df = pd.read_excel(url, header=1)
     df.to_csv(p_data, index=False)
@@ -53,6 +93,8 @@ def load_data() -> pd.DataFrame:
     pd.DataFrame
         Dataframe containing ice thickness records
     """
+    p_data = save_dir_default
+
     if not p_data.exists():
         log.warning(f'data file does not exist at: {p_data}')
         return
@@ -84,4 +126,6 @@ def _input(msg : str) -> bool:
         return False
 
 if __name__ == '__main__':
-    download_data()
+    download_data(
+        url=opt.get('--url', None),
+        save_dir=opt.get('--save_dir', None))
