@@ -8,4 +8,6 @@ dependencies:
   - ipykernel
   - xlrd
   - docopt
+  - pandas-profiling
+  - altair
 prefix: /opt/miniconda3/envs/522_grp_13
