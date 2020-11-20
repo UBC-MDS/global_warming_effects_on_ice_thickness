@@ -25,7 +25,7 @@ log.addHandler(sh)
 
 # opt = docopt(__doc__)
 
-p_data = Path(__file__).parents[1] / 'data/ice_thickness.csv' # set download location
+p_data = Path(__file__).parents[1] / 'data/raw/ice_thickness.csv' # set download location
 
 def download_data() -> None:
     """Download ice thickness data from url, write to csv in /data dir
