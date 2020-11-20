@@ -7,4 +7,5 @@ dependencies:
   - pandas
   - ipykernel
   - xlrd
+  - docopt
 prefix: /opt/miniconda3/envs/522_grp_13
