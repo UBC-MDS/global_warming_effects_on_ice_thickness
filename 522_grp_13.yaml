@@ -1,0 +1,10 @@
+name: 522_grp_13
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas
+  - ipykernel
+  - xlrd
+prefix: /opt/miniconda3/envs/522_grp_13
