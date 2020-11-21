@@ -25,8 +25,6 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 log.addHandler(sh)
 
-opt = docopt(__doc__)
-
 # set default download dir and url
 file_name = 'ice_thickness.csv'
 save_dir_default = Path(__file__).parents[1] / f'data/raw/{file_name}'
@@ -84,6 +82,8 @@ def download_data(url : str = None, save_dir : str = None) -> None:
     df.to_csv(p_data, index=False)
 
     log.info(f'Successfully downloaded data file with [{len(df)}] rows to "{p_data}"')
+    
+    return p_data
 
 def load_data() -> pd.DataFrame:
     """Load data from download location to DataFrame
@@ -126,6 +126,8 @@ def _input(msg : str) -> bool:
         return False
 
 if __name__ == '__main__':
+    opt = docopt(__doc__)
+    
     download_data(
         url=opt.get('--url', None),
         save_dir=opt.get('--save_dir', None))
