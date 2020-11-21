@@ -1,23 +1,10 @@
-# author: Group 13
-# date: 2020-11-19
-
-"""This script downloads a Canadian ice thickness data set
-
-Usage:
-    import_data.py [--url=<url>] [--save_dir=<save_dir>]
-
-Options:
-    [--url=<url>]             Optionalal url, fallback to default
-    [--save_dir=<save_dir>]   Optional save_dir, must be a directory NOT filename, fallback to default
-"""
+import logging
+from pathlib import Path
 
 import pandas as pd
-from docopt import docopt
-from pathlib import Path
-import logging
 
 # init logging
-fmt_stream = logging.Formatter('%(levelname)-7s %(lineno)-4d %(name)-10s %(message)s')
+fmt_stream = logging.Formatter('%(levelname)-7s %(lineno)-4d %(name)-20s %(message)s')
 sh = logging.StreamHandler()
 sh.setLevel(logging.INFO)
 sh.setFormatter(fmt_stream)
@@ -82,7 +69,7 @@ def download_data(url : str = None, save_dir : str = None) -> None:
     df.to_csv(p_data, index=False)
 
     log.info(f'Successfully downloaded data file with [{len(df)}] rows to "{p_data}"')
-    
+
     return p_data
 
 def load_data() -> pd.DataFrame:
@@ -124,10 +111,3 @@ def _input(msg : str) -> bool:
         return False
     else:
         return False
-
-if __name__ == '__main__':
-    opt = docopt(__doc__)
-    
-    download_data(
-        url=opt.get('--url', None),
-        save_dir=opt.get('--save_dir', None))
