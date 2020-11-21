@@ -24,7 +24,19 @@ To explore our dataset and help identify specific details that will be used in t
 
 ## Usage
 
+To replicate this analysis:
+1. Run the entry script `download.py`:
+```py
+# default no args
+python -m download
+```
 
+```py
+# specify download url and save directory
+python -m download --save_dir /path/to/save_directory --url https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls
+```
+
+2. Run all cells in `/scr/ice_thickness_eda.ipynb`
 
 ## Dependencies
 
