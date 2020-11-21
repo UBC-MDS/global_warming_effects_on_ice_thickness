@@ -69,6 +69,10 @@
 -   **Background**: economics + data analytics internships
 -   **Strengths**: 
             Python
-            statistics
+            Statistics
+            Machine Learning
 -   **Weaknesses**: 
-             R
+             R 
+-   **Interests**:
+            Sport prediction
+            finance
