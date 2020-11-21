@@ -8,6 +8,7 @@ dependencies:
   - ipykernel
   - xlrd
   - docopt
-  - pandas-profiling
   - altair
+  - pandas-profiling
+  - pytest
 prefix: /opt/miniconda3/envs/522_grp_13
