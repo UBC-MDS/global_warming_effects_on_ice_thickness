@@ -1,4 +1,4 @@
-# Global Warming effects on ice thickness
+# Global Warming Effects on Ice Thickness
 
 Members:
 - Jayme Gordon
