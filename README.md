@@ -36,16 +36,27 @@ python -m download
 python -m download --save_dir /path/to/save_directory --url https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls
 ```
 
-2. Run all cells in `/scr/ice_thickness_eda.ipynb`
+2. Run all cells in [`/scr/ice_thickness_eda.ipynb`](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/src/ice_thickness_eda.ipynb)
 
 ## Dependencies
 
-  - Python 3.7.3 and Python packages:
+  - Python 3.8.0 and Python packages:
       - docopt==0.6.2
+      - pandas
+      - ipykernel
+      - xlrd
+      - docopt
+      - altair
+      - pandas-profiling
+      - pytest
 
 ## License
 
+#### Data
 The Ice Thickness Program Collection, 1947-2002 data contains information licensed under the [Open Government Licence – Canada (version 2.0)](https://open.canada.ca/en/open-government-licence-canada).
+
+#### Project
+[MIT Licence](https://choosealicense.com/licenses/mit/)
 
 # References
 
