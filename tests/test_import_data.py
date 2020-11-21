@@ -3,6 +3,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 from src import import_data as ipd
+import os
 
 """
 Run tests from project root dir
@@ -20,10 +21,9 @@ def test_download_data(monkeypatch):
     if p.exists():
         p.unlink()
     
-    # test default case, no args given
-    p_data = ipd.download_data(url=None, save_dir=None)
-    assert isinstance(p_data, Path), 'No path obj returned!'
-    assert p_data.exists(), 'data file failed to download!'
+    # test from cmd line with default args
+    os.system('python -m download')
+    assert p.exists(), 'data file failed to download!'
 
     # test failure with incorrect save_dir
     p_data = ipd.download_data(url=None, save_dir='not_a_dir.csv')
