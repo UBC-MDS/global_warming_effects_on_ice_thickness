@@ -12,7 +12,7 @@ Data analysis project for DSCI 522 (Data Science workflows)
 
 We are trying to answer the question, did the mean ice thickness in the Canadian Arctic change by a statistically significant amount from the years 1984 to 1996? 
 This question stems from the rising global temperatures and a curiosity of how this warming impacts the depth of the ice. 
-The dataset used in this analysis contains measurements of ice thickness at various  established monitoring stations in the Canadian Arctic on a weekly basis. The data is made available from the Government of Canada and the monitoring is done by the Canadian Ice Thickness Program. Information about the program can be accessed through the Government of Canadafrom this website,  and the specific dataset we are using is publicly available [here](https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls )
+The dataset used in this analysis contains measurements of ice thickness at various  established monitoring stations in the Canadian Arctic on a weekly basis. The data is made available from the Government of Canada and the monitoring is done by the Canadian Ice Thickness Program. Information about the program can be accessed through the Government of Canada and the specific dataset we are using is publicly available [here](https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls).
 
 Ice thickness is measured to the nearest centinmetre using one of two methods: an auger kit or a hot wire ice thickness gauge. It contains data dating back to 1947; however, this data is sparse so it serves our analysis to only use measurements from 1984 onwards. Each row of the dataset contains information including Station ID, Date, and Ice Thickness among other variables. Data was collected weekly at various stations.
 
@@ -36,34 +36,23 @@ python -m download
 python -m download --save_dir /path/to/save_directory --url https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls
 ```
 
-2. Run all cells in [`/scr/ice_thickness_eda.ipynb`](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/src/ice_thickness_eda.ipynb)
+2. Run all cells in `/scr/ice_thickness_eda.ipynb`
 
 ## Dependencies
 
-  - Python 3.8.0 and Python packages:
+  - Python 3.7.3 and Python packages:
       - docopt==0.6.2
-      - pandas
-      - ipykernel
-      - xlrd
-      - docopt
-      - altair
-      - pandas-profiling
-      - pytest
 
 ## License
 
-#### Data
 The Ice Thickness Program Collection, 1947-2002 data contains information licensed under the [Open Government Licence – Canada (version 2.0)](https://open.canada.ca/en/open-government-licence-canada).
-
-#### Project
-[MIT Licence](https://choosealicense.com/licenses/mit/)
 
 # References
 
 <div id="refs" class="references">
 
   <div id="ref-___">
-
+Government of Canada (2020). Ice thickness data. Retrieved from: https://www.canada.ca/en/environment-climate-change/services/ice-forecasts-observations/latest-conditions/archive-overview/thickness-data.html 
 
   </div>
 
