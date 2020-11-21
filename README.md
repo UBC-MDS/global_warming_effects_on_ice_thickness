@@ -1,4 +1,4 @@
-# 552 Project - Group 13
+# Global Warming effects on ice thickness
 
 Members:
 - Jayme Gordon
