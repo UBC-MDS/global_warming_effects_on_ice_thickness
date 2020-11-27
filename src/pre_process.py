@@ -1,19 +1,34 @@
+# author: Sasha Babicki
+# date: 2020-11-26
+
+"""Read and process data from local filepath and save locally as csv.
+
+Usage: pre_proccess.py [--in_file=<in_file>] [--out_file=<out_file>]
+
+Options:
+[--in_file=<in_file>]    The local path (including filename) of the input file
+[--out_file=<out_file>]  The local path (including filename) of where to write the processed output file
+"""
+
+from docopt import docopt
 import pandas as pd
 import import_data
+
+opt = docopt(__doc__)
 
 DEFAULT_PATHS = {
     "in" : "../data/raw/ice_thickness.csv",
     "out" :  "../data/processed/ice_thickness.csv"
 }
 
-def process_data(input_path = DEFAULT_PATHS["in"], output_path = DEFAULT_PATHS["out"]):
+def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"]):
     """Read and process thickness data input_path, write to csv in output_path
 
     Parameters
     ----------
-    input_path : str, optional
+    in_file : str, optional
         filepath to download data, default in DEFAULT_PATHS
-    output_path : str, optional
+    out_file : str, optional
         filepath to save data, default in DEFAULT_PATHS
     """    
     try:
@@ -44,10 +59,11 @@ def process_data(input_path = DEFAULT_PATHS["in"], output_path = DEFAULT_PATHS["
     grouped_df = grouped_df.reset_index()
     
     try: 
-        grouped_df.to_csv(output_path, index=False)
+        grouped_df.to_csv(out_file, index=False)
     except: 
-        print(f"File could not be saved at: {output_path}")
+        print(f"File could not be saved at: {out_file}")
         
     return grouped_df
 
-process_data()
+if __name__ == "__main__":
+    process_data(opt["--in_file"], opt["--out_file"])
