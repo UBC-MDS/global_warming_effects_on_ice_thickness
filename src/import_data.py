@@ -3,17 +3,19 @@
 
 """Download data from the web to save locally as csv and provide functions for reading locally.
 
-Usage: src/import_data.py --url=<url> --out_file=<out_file>
+Usage: src/import_data.py [--url=<url>] [--out_path=<out_path>]
 
 Options:
---url=<url>            The url of the data to save
---out_file=<out_file>  The local path (including filename) of where to write the processed output file
+[--url=<url>]            Optional: The url of the data to save
+[--out_path=<out_path>]  Optional: The local path of where to save the downloaded data
 """
 
 import logging
-from pathlib import Path
-
 import pandas as pd
+from pathlib import Path
+from docopt import docopt
+
+opt = docopt(__doc__)
 
 # init logging
 fmt_stream = logging.Formatter('%(levelname)-7s %(lineno)-4d %(name)-20s %(message)s')
@@ -145,4 +147,4 @@ def read_file(file_name : str) -> pd.DataFrame:
 
 if __name__ == "__main__":
     
-    process_data(opt["--url"], opt["--out_file"])
+    download_data(opt["--url"], opt["--out_path"])
