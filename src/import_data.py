@@ -1,7 +1,21 @@
-import logging
-from pathlib import Path
+# author: Jayme Gordon, Sasha Babicki
+# date: 2020-11-26
 
+"""Download data from the web to save locally as csv and provide functions for reading locally.
+
+Usage: src/import_data.py [--url=<url>] [--out_path=<out_path>]
+
+Options:
+[--url=<url>]            Optional: The url of the data to save
+[--out_path=<out_path>]  Optional: The local path of where to save the downloaded data
+"""
+
+import logging
 import pandas as pd
+from pathlib import Path
+from docopt import docopt
+
+opt = docopt(__doc__)
 
 # init logging
 fmt_stream = logging.Formatter('%(levelname)-7s %(lineno)-4d %(name)-20s %(message)s')
@@ -65,8 +79,12 @@ def download_data(url : str = None, save_dir : str = None) -> None:
 
     log.info(f'Downloading data file from: {url}')
 
-    df = pd.read_excel(url, header=1)
-    df.to_csv(p_data, index=False)
+    try: 
+        df = pd.read_excel(url, header=1)
+        df.to_csv(p_data, index=False)
+    except:
+        log.info('Problem reading file. Please try again.')
+        return
 
     log.info(f'Successfully downloaded data file with [{len(df)}] rows to "{p_data}"')
 
@@ -83,7 +101,7 @@ def load_data() -> pd.DataFrame:
     p_data = save_dir_default
 
     if not p_data.exists():
-        log.warning(f'data file does not exist at: {p_data}')
+        log.warning(f'Data file does not exist at: {p_data}')
         return
 
     return pd.read_csv(p_data)
@@ -111,3 +129,26 @@ def _input(msg : str) -> bool:
         return False
     else:
         return False
+    
+def read_file(file_name : str) -> pd.DataFrame:
+    """Load data based on file name, download and save if file doesn't exist
+
+    Parameters
+    ----------
+    file_name : str
+        The local path (including filename) of the csv file
+        
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe containing ice thickness records
+    """
+    try: 
+        df = pd.read_csv(file_name)
+    except: 
+        df = download_data()
+    return df
+
+if __name__ == "__main__":
+    
+    download_data(opt["--url"], opt["--out_path"])
