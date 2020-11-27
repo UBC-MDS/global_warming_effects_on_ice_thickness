@@ -1,3 +1,15 @@
+# author: Jayme Gordon
+# date: 2020-11-26
+
+"""Download data from the web to save locally as csv and provide functions for reading locally.
+
+Usage: src/import_data.py --url=<url> --out_file=<out_file>
+
+Options:
+--url=<url>            The url of the data to save
+--out_file=<out_file>  The local path (including filename) of where to write the processed output file
+"""
+
 import logging
 from pathlib import Path
 
@@ -111,3 +123,21 @@ def _input(msg : str) -> bool:
         return False
     else:
         return False
+    
+def read_file(file_name : str) -> pd.DataFrame:
+    """Load data from download location to DataFrame
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe containing ice thickness records
+    """
+    try: 
+        df = pd.read_csv(file_name)
+    except: 
+        df = download_data()
+    return df
+
+if __name__ == "__main__":
+    
+    process_data(opt["--url"], opt["--out_file"])

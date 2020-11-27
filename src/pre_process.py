@@ -31,12 +31,11 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     out_file : str, optional
         filepath to save data, default in DEFAULT_PATHS
     """    
-    
+
     try:
-        df = import_data.load_data()
+        df = import_data.read_file(in_file)
     except:
-        import_data.download_data()
-        df = import_data.load_data()
+        print(f"File could not be read at: {in_file}")
 
     df_filtered = df.copy()
     df_filtered['Date'] = pd.DatetimeIndex(df_filtered['Date'])
