@@ -3,11 +3,11 @@
 
 """Read and process data from local filepath and save locally as csv.
 
-Usage: pre_proccess.py [--in_file=<in_file>] [--out_file=<out_file>]
+Usage: pre_proccess.py --in_file=<in_file> --out_file=<out_file>
 
 Options:
-[--in_file=<in_file>]    The local path (including filename) of the input file
-[--out_file=<out_file>]  The local path (including filename) of where to write the processed output file
+--in_file=<in_file>    The local path (including filename) of the input file
+--out_file=<out_file>  The local path (including filename) of where to write the processed output file
 """
 
 from docopt import docopt
@@ -31,6 +31,7 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     out_file : str, optional
         filepath to save data, default in DEFAULT_PATHS
     """    
+    
     try:
         df = import_data.load_data()
     except:
@@ -66,4 +67,5 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     return grouped_df
 
 if __name__ == "__main__":
+    
     process_data(opt["--in_file"], opt["--out_file"])
