@@ -1,4 +1,4 @@
-# author: Jayme Gordon
+# author: Jayme Gordon, Sasha Babicki
 # date: 2020-11-26
 
 """Download data from the web to save locally as csv and provide functions for reading locally.
@@ -125,8 +125,13 @@ def _input(msg : str) -> bool:
         return False
     
 def read_file(file_name : str) -> pd.DataFrame:
-    """Load data from download location to DataFrame
+    """Load data based on file name, download and save if file doesn't exist
 
+    Parameters
+    ----------
+    file_name : str
+        The local path (including filename) of the csv file
+        
     Returns
     -------
     pd.DataFrame
