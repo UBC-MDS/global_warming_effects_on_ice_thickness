@@ -79,8 +79,12 @@ def download_data(url : str = None, save_dir : str = None) -> None:
 
     log.info(f'Downloading data file from: {url}')
 
-    df = pd.read_excel(url, header=1)
-    df.to_csv(p_data, index=False)
+    try: 
+        df = pd.read_excel(url, header=1)
+        df.to_csv(p_data, index=False)
+    except:
+        log.info('Problem reading file. Please try again.')
+        return
 
     log.info(f'Successfully downloaded data file with [{len(df)}] rows to "{p_data}"')
 
@@ -97,7 +101,7 @@ def load_data() -> pd.DataFrame:
     p_data = save_dir_default
 
     if not p_data.exists():
-        log.warning(f'data file does not exist at: {p_data}')
+        log.warning(f'Data file does not exist at: {p_data}')
         return
 
     return pd.read_csv(p_data)
