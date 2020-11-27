@@ -57,6 +57,7 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     df_filtered["year"] = df_filtered["date"].dt.year
     grouped_df = df_filtered.groupby(["station_id", "station_name", "month", "year"]).mean()
     grouped_df = grouped_df.reset_index()
+    grouped_df = df_filtered[["station_id", "station_name", "month", "year", "ice_thickness"]]
     
     try: 
         grouped_df.to_csv(out_file, index=False)
