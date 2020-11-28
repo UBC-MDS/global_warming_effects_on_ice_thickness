@@ -23,12 +23,31 @@ import chromedriver_binary
 opt = docopt(__doc__)
 
 def read_data(input_path):
-    # read in data
-    df = pd.read_csv(input_path)
+    """Read in preprocessed data from input_path, output as a pandas dataframe
+    
+    Parameters
+    ----------
+    input_path : str
+        filepath to read data from
+    """
+    
+    try:
+        df = pd.read_csv(input_path)
+    except:
+        print(f"File could not be read from: {input_path}")
+        
     return(df)
 
 def create_figures(df):
-    # first figure of mean thickness by year
+    """Input a pandas dataframe and output Altair plots
+    
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        processed DataFrame used to create figures
+    """
+    
+    # first figure of mean thickness by year - bar plot
     mean_thickness_year = (alt.Chart(df).mark_bar(size=16).encode(
         y = alt.Y("median(mean_ice_thickness)", title="Median Ice Thickness Averages(cm)"),
         x = alt.X("year:O", title="Year"))
@@ -61,11 +80,27 @@ def create_figures(df):
     return(mean_thickness_year, density)
       
 def save_figures(figure1, figure2, output_path):
+    """Input Altair figures
+    
+    Parameters
+    ----------
+    figure1, figure2 : Altair.Chart
+        Altair charts to be saved
+    """
+    
+    # save figure 1
     figure_1_path = output_path + '/median_thickness_year.png'
-    save(figure1, figure_1_path)
-    # save second figure
+    try:
+        save(figure1, figure_1_path)
+    except:
+        print(f"Figure 1 could not be saved at {figure_1_path}")
+        
+    # save figure 2
     figure_2_path = output_path + '/density.png'
-    save(figure2, figure_2_path)    
+    try:
+        save(figure2, figure_2_path)  
+    except:
+        print(f"Figure 2 could not be saved at {figure_2_path}")
  
 def main(input_path, output_path):
     dataframe = read_data(input_path)
