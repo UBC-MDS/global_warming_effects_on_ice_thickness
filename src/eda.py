@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""This script takes in a filepath.
-This script outputs figures
-Usage: test.py <var1> --figure1=<figure1> --figure2=<figure2>
+"""This script reads processed data from a specified input filepath and produces EDA figures to
+to a specificed output filepath
+Usage: test.py <input_path> --figure1=<figure1> --figure2=<figure2>
 
 Options:
-<var1>       Path to the data file
+<input_path>       Path to the data file
 --figure1=<figure1>
 --figure2=<figure2>
 """
@@ -24,7 +24,6 @@ opt = docopt(__doc__)
 def main(input_path, figure1, figure2):
     # read in data
     df = pd.read_csv(input_path)
-    #df = df.groupby(["station_id", "station_name", "month", "year"]).mean().reset_index()
     
     # first plot of mean thickness by year
     mean_thickness_year = (alt.Chart(df).mark_bar(size=16).encode(
@@ -60,5 +59,5 @@ def main(input_path, figure1, figure2):
     save(density, figure2)
         
 if __name__ == "__main__":
-    main(opt["<var1>"], opt["--figure1"], opt["--figure2"])
+    main(opt["<input_path>"], opt["--figure1"], opt["--figure2"])
     
