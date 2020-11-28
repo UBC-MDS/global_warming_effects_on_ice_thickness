@@ -5,7 +5,7 @@
 
 """This script reads processed data from a specified input filepath and produces EDA figures to
 to a specificed output filepath
-Usage: test.py <input_path> <output_path>
+Usage: eda_figure_export.py <input_path> <output_path>
 
 Options:
 <input_path>        Path to the input data file
