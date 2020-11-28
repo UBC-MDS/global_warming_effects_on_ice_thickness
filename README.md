@@ -48,6 +48,8 @@ python -m download --save_dir /path/to/save_directory --url https://www.canada.c
       - altair
       - pandas-profiling
       - pytest
+      - altair_saver
+      - chromedriver_binary
 
 ## License
 
