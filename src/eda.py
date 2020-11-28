@@ -22,10 +22,12 @@ import chromedriver_binary
 
 opt = docopt(__doc__)
 
-def main(input_path, output_path):
+def read_data(input_path):
     # read in data
     df = pd.read_csv(input_path)
-    
+    return(df)
+
+def create_figures(df):
     # first figure of mean thickness by year
     mean_thickness_year = (alt.Chart(df).mark_bar(size=16).encode(
         y = alt.Y("median(mean_ice_thickness)", title="Median Ice Thickness Averages(cm)"),
@@ -56,13 +58,20 @@ def main(input_path, output_path):
                               sort=['January','February','March']), 
                background='white'))
     
-    # save first figure
+    return(mean_thickness_year, density)
+      
+def save_figures(figure1, figure2, output_path):
     figure_1_path = output_path + '/median_thickness_year.png'
-    save(mean_thickness_year, figure_1_path)
+    save(figure1, figure_1_path)
     # save second figure
     figure_2_path = output_path + '/density.png'
-    save(density, figure_2_path)
-        
+    save(figure2, figure_2_path)    
+ 
+def main(input_path, output_path):
+    dataframe = read_data(input_path)
+    figure1, figure2 = create_figures(dataframe)
+    save_figures(figure1, figure2, output_path)
+
 if __name__ == "__main__":
     main(opt["<input_path>"], opt["<output_path>"])
-    
+
