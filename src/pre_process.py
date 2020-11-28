@@ -12,7 +12,6 @@ Options:
 
 from docopt import docopt
 import pandas as pd
-import import_data
 
 opt = docopt(__doc__)
 
@@ -33,7 +32,7 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     """    
 
     try:
-        df = import_data.read_file(in_file)
+        df = pd.read_csv(in_file)
     except:
         print(f"File could not be read at: {in_file}")
 
@@ -55,9 +54,11 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     df_filtered = df_filtered[df_filtered["ice_thickness"] > 0]
     df_filtered["month"] = df_filtered["date"].dt.month
     df_filtered["year"] = df_filtered["date"].dt.year
-    grouped_df = df_filtered.groupby(["station_id", "station_name", "month", "year"]).mean()
-    grouped_df = grouped_df.reset_index()
-    grouped_df = df_filtered[["station_id", "station_name", "month", "year", "ice_thickness"]]
+    grouped_df = df_filtered.groupby(["station_id", "station_name", "month", "year"]) \
+        .agg(mean_ice_thickness=("ice_thickness", "mean")) \
+        .reset_index()
+
+    grouped_df = grouped_df[["station_id", "station_name", "month", "year", "mean_ice_thickness"]]
     
     try: 
         grouped_df.to_csv(out_file, index=False)
