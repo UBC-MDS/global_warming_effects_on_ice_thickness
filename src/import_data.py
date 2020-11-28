@@ -145,8 +145,11 @@ def read_file(file_name : str) -> pd.DataFrame:
     """
     try: 
         df = pd.read_csv(file_name)
+    
+    # if file does not exist or cannot be read, download from default url
     except: 
         df = download_data()
+        
     return df
 
 if __name__ == "__main__":
