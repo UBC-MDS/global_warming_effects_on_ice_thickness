@@ -57,6 +57,15 @@ Rscript src/ice_thickness_analysis.R  --dir_in="data/processed/ice_thickness.csv
       - pytest
       - altair_saver
       - chromedriver_binary
+  - R 4.0.3 and R libraries:
+      - tidyverse
+      - dplyr
+      - datateachr
+      - infer
+      - ggplot2
+      - purrr
+      - knitr
+      - docopt
 
 ## License
 
