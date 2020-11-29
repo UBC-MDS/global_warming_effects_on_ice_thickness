@@ -11,4 +11,6 @@ dependencies:
   - altair
   - pandas-profiling
   - pytest
+  - altair_saver
+  - chromedriver_binary
 prefix: /opt/miniconda3/envs/522_grp_13

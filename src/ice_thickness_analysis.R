@@ -28,10 +28,12 @@ main <- function() {
     # parse docopt args
     opt <- docopt(doc)
 
-    dir_out <- if (opt$dir_out) opt$dir_out else "../results"
+    # dir_out <- "../results"
+    dir_out <- opt$dir_out
 
-    # dir_in <- "./data/processed/ice_thickness.csv"
-    dir_in <- if (opt$dir_in) opt$dir_in else "../data/processed/ice_thickness.csv"
+    # dir_in <- "../data/processed/ice_thickness.csv"
+    dir_in <- opt$dir_in
+    
     df_in <- read_csv(dir_in)
 
     make_pvalue_table(df_in = df_in, dir_out = dir_out)
@@ -92,7 +94,7 @@ make_chart <- function(df_in, dir_out) {
         labs(
             x = "Year",
             y = "Median Ice Thickness (cm)",
-            title = "95% Confidence Intervals for Median Ice Thickness per Year")
+            title = "95% Confidence Intervals for Median Ice Thickness per Year in January")
 
     plt + ggsave(paste0(dir_out, "/median_ice_thickness_ci.png"))
 
@@ -158,7 +160,7 @@ make_pvalue_table <- function(df_in, dir_out, reps = 1000, years = c(1984, 1994)
     df_out <- tibble(month = months) %>%
         mutate(p_value = map_dbl(
             months,
-            ~get_p_value(., years = years, df = df, reps = reps))) #get_pvalue
+            ~get_p_value(., years = years, df = df, reps = reps)))
 
     write.csv(df_out, paste0(dir_out, "/p_value.csv"))
     
