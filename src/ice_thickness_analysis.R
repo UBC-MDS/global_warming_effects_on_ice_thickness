@@ -20,31 +20,35 @@ library(ggplot2)
 library(purrr)
 library(knitr)
 library(docopt)
-# library(kableExtra)
 
 options(dplyr.summarise.inform = FALSE)
 set.seed(2020)
-
-# dependencies - needed for save_kable.. probably dont need this
-# install.packages("magick")
-# install.packages("webshot")
-# webshot::install_phantomjs()
 
 main <- function() {
     # parse docopt args
     opt <- docopt(doc)
 
-    # dir_out <- "./results"
-    dir_out <- opt$dir_out
+    dir_out <- if (opt$dir_out) opt$dir_out else "../results"
 
     # dir_in <- "./data/processed/ice_thickness.csv"
-    df_in <- read_csv(opt$dir_in)
+    dir_in <- if (opt$dir_in) opt$dir_in else "../data/processed/ice_thickness.csv"
+    df_in <- read_csv(dir_in)
 
     make_pvalue_table(df_in = df_in, dir_out = dir_out)
     make_chart(df_in = df_in, dir_out = dir_out)
 }
 
 
+#' Generate 95% confidence intervals and save chart
+#'
+#' @param df_in DataFrame with samples
+#' @param dir_out The folder to save the chart in
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' make_chart(df, "/results")
 make_chart <- function(df_in, dir_out) {
 
     # filter df to all years, and jan 1
@@ -79,25 +83,36 @@ make_chart <- function(df_in, dir_out) {
                 ymin = lower_ci,
                 ymax = upper_ci),
             size = 0.5,
-            color = "blue",
-            width = 0.05) +
+            width = 0.5) +
         geom_point(
             data = median_est,
             aes(x = year, y = median),
-            shape = 18,
             size = 3,
-            color = "red") +
+            color = "blue") +
         labs(
-            x = "",
-            y = "Median ice thickness (bootstrap)",
-            title = "Bootstrap Samples of Median Ice Thickness per Year")
+            x = "Year",
+            y = "Median Ice Thickness (cm)",
+            title = "95% Confidence Intervals for Median Ice Thickness per Year")
 
-    plt + ggsave(paste0(dir_out, "/median_ice_thickness.png"))
+    plt + ggsave(paste0(dir_out, "/median_ice_thickness_ci.png"))
 
 }
 
-
+#' Run permutation test for diff in means and return result
+#'
+#' @param month Integer representing month of interest
+#' @param years Numeric vector containing 2 years of interest to compare
+#' @param df DataFrame containing the sample observations
+#' @param reps Integer number of repetitions for the permutation
+#'
+#' @return Integer - the calculated p-value
+#' @export
+#'
+#' @examples
+#' get_p_value(1, c(1984, 1996), df, 1000)
+#' > 0.034
 get_p_value <- function(month, years, df, reps) {
+    
     # pvalue between 2 years, for single month
 
     medians <- df %>% 
@@ -118,7 +133,20 @@ get_p_value <- function(month, years, df, reps) {
     result$p_value
 }
 
-make_pvalue_table <- function(df_in, dir_out, reps = 1000, years = c(1984, 1994)) {
+#' Generate and save a table of p-values for each month
+#'
+#' @param df_in DataFrame with samples
+#' @param dir_out String for directory to save the output table in
+#' @param reps Integer number of reps to use for the permutation test
+#' @param years Numeric vector containing 2 years of interest to compare
+#' @param save_img Boolean indicating if the table should be saved as image as well as csv
+#'
+#' @return 
+#' @export
+#'
+#' @examples
+#' make_pvalue_table(df, "data/img_folder")
+make_pvalue_table <- function(df_in, dir_out, reps = 1000, years = c(1984, 1994), save_img = FALSE) {
     
     months <- c(1, 2, 3)
 
@@ -132,13 +160,12 @@ make_pvalue_table <- function(df_in, dir_out, reps = 1000, years = c(1984, 1994)
             months,
             ~get_p_value(., years = years, df = df, reps = reps))) #get_pvalue
 
-    print(df_out)
     write.csv(df_out, paste0(dir_out, "/p_value.csv"))
-
-    # kable(df_out) %>% save_kable(paste0(dir_out, "/p_value.png"))
-    # kable save df
+    
+    if(save_img){
+        kable(df_out) %>% save_kable(paste0(dir_out, "/p_value.png"))
+    }
 }
-
 
 #' Confidence intervals for the median
 #'
