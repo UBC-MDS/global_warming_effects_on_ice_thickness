@@ -76,6 +76,7 @@ The Ice Thickness Program Collection, 1947-2002 data contains information licens
 
   <div id="ref-___">
 Government of Canada (2020). Ice thickness data. Retrieved from: https://www.canada.ca/en/environment-climate-change/services/ice-forecasts-observations/latest-conditions/archive-overview/thickness-data.html 
+  
 
 Timbers, T. (2020). DSCI 522 Statistical Inference and Computation I. Retreved from: https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students
 
