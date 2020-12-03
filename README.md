@@ -22,25 +22,16 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 
 ## Usage
 
-To replicate this analysis:
-1. Run the entry script `import_.py`:
+To replicate the analysis, clone this GitHub repository, install the dependencies listed below or create a conda environment using the provided yaml file, and run the following command at the command line/terminal from the root directory of this project:
+
 ```shell
-python src/import_data.py --url="https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls" --out_path="data/raw"
+make all
 ```
 
-2. Process the file with `pre_process.py`:
-```shell
-python src/pre_process.py --in_file="data/raw/ice_thickness.csv" --out_file="data/processed/ice_thickness.csv"
-```
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
-3. Generate EDA figures using `eda_figure_export.py`: 
 ```shell
-python src/eda_figure_export.py "data/processed/ice_thickness.csv" "results/"
-```
-
-4. Perform analysis and export figures using `ice_thickness_analysis.R`: 
-```shell
-Rscript src/ice_thickness_analysis.R  --dir_in="data/processed/ice_thickness.csv"  --dir_out="results/"
+make clean
 ```
 
 ## Dependencies
