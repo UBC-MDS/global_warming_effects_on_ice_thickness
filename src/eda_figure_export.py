@@ -108,28 +108,28 @@ def save_figures(figure1, figure2, figure3, figure4, output_path):
     """
     
     # save figure 1
-    figure_1_path = output_path + '/median_thickness_year.png'
+    figure_1_path = output_path + '/median_thickness_year.svg'
     try:
         save(figure1, figure_1_path)
     except:
         print(f"Figure 1 could not be saved at {figure_1_path}")
         
     # save figure 2
-    figure_2_path = output_path + '/density.png'
+    figure_2_path = output_path + '/density.svg'
     try:
         save(figure2, figure_2_path)  
     except:
         print(f"Figure 2 could not be saved at {figure_2_path}")
         
      # save figure 3
-    figure_3_path = output_path + '/month_boxplot.png'
+    figure_3_path = output_path + '/month_boxplot.svg'
     try:
         save(figure3, figure_3_path)  
     except:
         print(f"Figure 3 could not be saved at {figure_3_path}")
         
     # save figure 4
-    figure_4_path = output_path + '/ice_histogram.png'
+    figure_4_path = output_path + '/ice_histogram.svg'
     try:
         save(figure4, figure_4_path)  
     except:
