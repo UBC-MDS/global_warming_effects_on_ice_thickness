@@ -16,9 +16,7 @@ import pandas as pd
 import altair as alt
 from docopt import docopt
 from altair_saver import save
-#from selenium import webdriver
 import chromedriver_binary
-#driver = webdriver.Chrome()
 
 opt = docopt(__doc__)
 
@@ -61,7 +59,6 @@ def create_figures(df):
     month_names = {1: "January", 2:"February", 3:"March"}
     df_density = df_density.replace({"month":month_names})
     
-    # create figure
     density = (alt.Chart(df_density)
         .transform_density(
             'mean_ice_thickness',
@@ -77,35 +74,68 @@ def create_figures(df):
                               sort=['January','February','March']), 
                background='white'))
     
-    return(mean_thickness_year, density)
+    # third figure - boxplot of mean ice thickness
+    month_boxplot = alt.Chart(df, 
+                              title="Mean Ice Thickness by Month").mark_boxplot().encode(
+        y=alt.Y("mean_ice_thickness", title="Ice Thickness (cm)"),
+        x=alt.X("month", title="Month"),
+        tooltip=["mean_ice_thickness", "month", "station_name"])
+    
+    # fourth figure - distribution of icet hickness over time (monthly)
+    ice_histogram = alt.Chart(df, 
+                              title="Ice thickness measurements over all time").mark_bar().encode(
+        x = alt.X("mean_ice_thickness", title="Ice Thickness (cm)", bin=alt.Bin(maxbins=40)),
+        y = alt.Y("count()", title="Number of measurements"), 
+        ).properties(
+            width=150,
+            height=150
+        ).facet(
+                "month",
+                columns=4)
+    
+    return(mean_thickness_year, density, month_boxplot, ice_histogram)
       
-def save_figures(figure1, figure2, output_path):
+def save_figures(figure1, figure2, figure3, figure4, output_path):
     """Input Altair figures
     
     Parameters
     ----------
-    figure1, figure2 : Altair.Chart
+    figure1, figure2, figure3, figure4 : Altair.Chart
         Altair charts to be saved
     """
     
     # save figure 1
-    figure_1_path = output_path + '/median_thickness_year.png'
+    figure_1_path = output_path + '/median_thickness_year.svg'
     try:
         save(figure1, figure_1_path)
     except:
         print(f"Figure 1 could not be saved at {figure_1_path}")
         
     # save figure 2
-    figure_2_path = output_path + '/density.png'
+    figure_2_path = output_path + '/density.svg'
     try:
         save(figure2, figure_2_path)  
     except:
         print(f"Figure 2 could not be saved at {figure_2_path}")
+        
+     # save figure 3
+    figure_3_path = output_path + '/month_boxplot.svg'
+    try:
+        save(figure3, figure_3_path)  
+    except:
+        print(f"Figure 3 could not be saved at {figure_3_path}")
+        
+    # save figure 4
+    figure_4_path = output_path + '/ice_histogram.svg'
+    try:
+        save(figure4, figure_4_path)  
+    except:
+        print(f"Figure 4 could not be saved at {figure_4_path}")
  
 def main(input_path, output_path):
     dataframe = read_data(input_path)
-    figure1, figure2 = create_figures(dataframe)
-    save_figures(figure1, figure2, output_path)
+    figure1, figure2, figure3, figure4 = create_figures(dataframe)
+    save_figures(figure1, figure2, figure3, figure4, output_path)
 
 if __name__ == "__main__":
     main(opt["<input_path>"], opt["<output_path>"])
