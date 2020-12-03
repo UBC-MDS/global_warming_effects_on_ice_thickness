@@ -11,15 +11,12 @@ Options:
 <input_path>        Path to the input data file
 <output_path>       Path to save figures to
 """
-#python eda_figure_export.py ../data/processed/ice_thickness.csv EDA_notebook_visuals
 
 import pandas as pd
 import altair as alt
 from docopt import docopt
 from altair_saver import save
-#from selenium import webdriver
 import chromedriver_binary
-#driver = webdriver.Chrome()
 
 opt = docopt(__doc__)
 
