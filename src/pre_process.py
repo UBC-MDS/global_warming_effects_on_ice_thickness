@@ -12,6 +12,7 @@ Options:
 
 from docopt import docopt
 import pandas as pd
+from pathlib import Path
 
 opt = docopt(__doc__)
 
@@ -60,7 +61,11 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
 
     grouped_df = grouped_df[["station_id", "station_name", "month", "year", "mean_ice_thickness"]]
     
-    try: 
+    try:
+        p = Path(out_file)
+        if not p.parent.exists():
+            p.parent.mkdir(parents=True)
+            
         grouped_df.to_csv(out_file, index=False)
     except: 
         print(f"File could not be saved at: {out_file}")
