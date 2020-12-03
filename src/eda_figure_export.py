@@ -4,12 +4,13 @@
 # date: 2020-11-27
 
 """This script reads processed data from a specified input filepath and produces EDA figures to
-to a specificed output filepath
-Usage: eda_figure_export.py <input_path> <output_path>
+to a specificed output filepaths
+Usage: eda_figure_export.py <input_path> <output_path_results> <output_path_eda>
 
 Options:
-<input_path>        Path to the input data file
-<output_path>       Path to save figures to
+<input_path>                Path to the input data file
+<output_path_results>       Path to save figures to for report
+<output_path_eda>           Path to save figures to for eda notebook
 """
 
 import pandas as pd
@@ -95,7 +96,7 @@ def create_figures(df):
     
     return(mean_thickness_year, density, month_boxplot, ice_histogram)
       
-def save_figures(figure1, figure2, figure3, figure4, output_path):
+def save_figures(figure1, figure2, figure3, figure4, output_path_results, output_path_eda):
     """Input Altair figures
     
     Parameters
@@ -103,40 +104,56 @@ def save_figures(figure1, figure2, figure3, figure4, output_path):
     figure1, figure2, figure3, figure4 : Altair.Chart
         Altair charts to be saved
     """
-    
-    # save figure 1
-    figure_1_path = output_path + '/median_thickness_year.svg'
+    # results folder
+    # save figure 1 to eda
+    figure_1_path = output_path_results + '/median_thickness_year.svg'
     try:
         save(figure1, figure_1_path)
     except:
         print(f"Figure 1 could not be saved at {figure_1_path}")
-        
-    # save figure 2
-    figure_2_path = output_path + '/density.svg'
+    
+    # save figure 2 to eda
+    figure_2_path = output_path_results + '/density.svg'
+    try:
+        save(figure2, figure_2_path)  
+    except:
+        print(f"Figure 2 could not be saved at {figure_2_path}")
+    
+    
+    # eda folder
+    # save figure 1 to eda
+    figure_1_path = output_path_eda + '/median_thickness_year.svg'
+    try:
+        save(figure1, figure_1_path)
+    except:
+        print(f"Figure 1 could not be saved at {figure_1_path}")
+    
+    # save figure 2 to eda
+    figure_2_path = output_path_eda + '/density.svg'
     try:
         save(figure2, figure_2_path)  
     except:
         print(f"Figure 2 could not be saved at {figure_2_path}")
         
-     # save figure 3
-    figure_3_path = output_path + '/month_boxplot.svg'
+     # save figure 3 to eda
+    figure_3_path = output_path_eda + '/month_boxplot.svg'
     try:
         save(figure3, figure_3_path)  
     except:
         print(f"Figure 3 could not be saved at {figure_3_path}")
         
-    # save figure 4
-    figure_4_path = output_path + '/ice_histogram.svg'
+    # save figure 4 to eda
+    figure_4_path = output_path_eda + '/ice_histogram.svg'
     try:
         save(figure4, figure_4_path)  
     except:
         print(f"Figure 4 could not be saved at {figure_4_path}")
  
-def main(input_path, output_path):
+def main(input_path, output_path_results, output_path_eda):
     dataframe = read_data(input_path)
     figure1, figure2, figure3, figure4 = create_figures(dataframe)
-    save_figures(figure1, figure2, figure3, figure4, output_path)
+    save_figures(figure1, figure2, figure3, figure4, output_path_results, output_path_eda)
 
 if __name__ == "__main__":
-    main(opt["<input_path>"], opt["<output_path>"])
+    main(opt["<input_path>"], opt["<output_path_results>"], opt["<output_path_eda>"])
 
