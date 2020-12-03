@@ -56,6 +56,7 @@ make clean
       - purrr
       - knitr
       - docopt
+      - svglite
 
 ## License
 
