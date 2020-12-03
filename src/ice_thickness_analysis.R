@@ -96,7 +96,7 @@ make_chart <- function(df_in, dir_out) {
             y = "Median Ice Thickness (cm)",
             title = "95% Confidence Intervals for Median Ice Thickness per Year in January")
 
-    plt + ggsave(paste0(dir_out, "/median_ice_thickness_ci.png"))
+    plt + ggsave(paste0(dir_out, "/median_ice_thickness_ci.svg"))
 
 }
 
