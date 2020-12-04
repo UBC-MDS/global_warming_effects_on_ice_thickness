@@ -13,13 +13,17 @@ Options:
 <output_path_eda>           Path to save figures to for eda notebook
 """
 
-import pandas as pd
+from pathlib import Path
+
 import altair as alt
-from docopt import docopt
+import pandas as pd
 from altair_saver import save
-import chromedriver_binary
+from docopt import docopt
+
+from __init__ import getlog
 
 opt = docopt(__doc__)
+log = getlog(__file__)
 
 def read_data(input_path):
     """Read in preprocessed data from input_path, output as a pandas dataframe
@@ -33,9 +37,10 @@ def read_data(input_path):
     try:
         df = pd.read_csv(input_path)
     except:
-        print(f"File could not be read from: {input_path}")
+        log.error(f"File could not be read from: {input_path}")
+        raise
         
-    return(df)
+    return df
 
 def create_figures(df):
     """Input a pandas dataframe and output Altair plots
@@ -95,65 +100,58 @@ def create_figures(df):
                 columns=4)
     
     return(mean_thickness_year, density, month_boxplot, ice_histogram)
-      
-def save_figures(figure1, figure2, figure3, figure4, output_path_results, output_path_eda):
-    """Input Altair figures
-    
+
+def save_figures(figures : dict, save_dir : str, ext : str = 'svg'):
+    """Save figure objs to specified path with extension
+
     Parameters
     ----------
-    figure1, figure2, figure3, figure4 : Altair.Chart
-        Altair charts to be saved
+    figures : dict
+        dict of {name: Altair figure obj}
+    save_dir : str
+        root dir to save figures, eg save_dir / name.ext
+    ext : str
+        extension to save figures with
     """
-    # results folder
-    # save figure 1 to eda
-    figure_1_path = output_path_results + '/median_thickness_year.svg'
-    try:
-        save(figure1, figure_1_path)
-    except:
-        print(f"Figure 1 could not be saved at {figure_1_path}")
-    
-    # save figure 2 to eda
-    figure_2_path = output_path_results + '/density.svg'
-    try:
-        save(figure2, figure_2_path)  
-    except:
-        print(f"Figure 2 could not be saved at {figure_2_path}")
-    
-    
-    # eda folder
-    # save figure 1 to eda
-    figure_1_path = output_path_eda + '/median_thickness_year.svg'
-    try:
-        save(figure1, figure_1_path)
-    except:
-        print(f"Figure 1 could not be saved at {figure_1_path}")
-    
-    # save figure 2 to eda
-    figure_2_path = output_path_eda + '/density.svg'
-    try:
-        save(figure2, figure_2_path)  
-    except:
-        print(f"Figure 2 could not be saved at {figure_2_path}")
-        
-     # save figure 3 to eda
-    figure_3_path = output_path_eda + '/month_boxplot.svg'
-    try:
-        save(figure3, figure_3_path)  
-    except:
-        print(f"Figure 3 could not be saved at {figure_3_path}")
-        
-    # save figure 4 to eda
-    figure_4_path = output_path_eda + '/ice_histogram.svg'
-    try:
-        save(figure4, figure_4_path)  
-    except:
-        print(f"Figure 4 could not be saved at {figure_4_path}")
+
+    # create root dir if doesn't exist
+    p_root = Path(save_dir)
+    if not p_root.exists():
+        p_root.mkdir(parents=True)
+        log.info(f'Created dir: {p_root}')
+
+    # loop input dict and save figs
+    for name, fig in figures.items():
+        p = p_root / f'{name}.{ext}'
+
+        try:
+            save(fig, str(p))
+        except:
+            log.error(f'Could not save figure at: {p}')
+            raise # re raise error, don't continue if saving fig fails
  
 def main(input_path, output_path_results, output_path_eda):
-    dataframe = read_data(input_path)
-    figure1, figure2, figure3, figure4 = create_figures(dataframe)
-    save_figures(figure1, figure2, figure3, figure4, output_path_results, output_path_eda)
+    df = read_data(input_path)
+    figure1, figure2, figure3, figure4 = create_figures(df)
+
+    # create dicts of {fig_name : fig_obj}
+    m_results = dict(
+        median_thickness_year=figure1,
+        density=figure2)
+    
+    m_eda = dict(
+        median_thickness_year=figure1,
+        density=figure2,
+        month_boxplot=figure3,
+        ice_histogram=figure4)
+    
+    # save figs at specified paths
+    ext = 'svg'
+    save_figures(figures=m_results, save_dir=output_path_results, ext=ext)
+    save_figures(figures=m_eda, save_dir=output_path_eda, ext=ext)
 
 if __name__ == "__main__":
-    main(opt["<input_path>"], opt["<output_path_results>"], opt["<output_path_eda>"])
-
+    main(
+        input_path=opt["<input_path>"],
+        output_path_results=opt["<output_path_results>"],
+        output_path_eda=opt["<output_path_eda>"])
