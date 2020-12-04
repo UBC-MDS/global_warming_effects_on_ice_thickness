@@ -22,7 +22,7 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 
 ## Usage
 
-To replicate the analysis, clone this GitHub repository, install the dependencies listed below or create a conda environment using the provided yaml file, and run the following command at the command line/terminal from the root directory of this project:
+To replicate the analysis, clone this GitHub repository, install the dependencies listed below (python dependencies can be installed using the conda environment provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml) file, and run the following command at the command line/terminal from the root directory of this project:
 
 ```shell
 make all
