@@ -9,12 +9,15 @@ Options:
 --in_file=<in_file>    The local path (including filename) of the input file
 --out_file=<out_file>  The local path (including filename) of where to write the processed output file
 """
-
-from docopt import docopt
-import pandas as pd
 from pathlib import Path
 
+import pandas as pd
+from docopt import docopt
+
+from __init__ import getlog
+
 opt = docopt(__doc__)
+log = getlog(__file__)
 
 DEFAULT_PATHS = {
     "in" : "../data/raw/ice_thickness.csv",
@@ -34,8 +37,10 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
 
     try:
         df = pd.read_csv(in_file)
+        log.info(f'loaded dataframe with shape: {df.shape}')
     except:
-        print(f"File could not be read at: {in_file}")
+        log.error(f'File could not be read at: {in_file}')
+        raise
 
     df_filtered = df.copy()
     df_filtered['Date'] = pd.DatetimeIndex(df_filtered['Date'])
@@ -67,8 +72,10 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
             p.parent.mkdir(parents=True)
             
         grouped_df.to_csv(out_file, index=False)
+        log.info(f'Successfully pre-processed df to shape: {grouped_df.shape}')
     except: 
-        print(f"File could not be saved at: {out_file}")
+        log.error(f"File could not be saved at: {out_file}")
+        raise
         
     return grouped_df
 
