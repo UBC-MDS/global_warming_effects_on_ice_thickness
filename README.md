@@ -6,7 +6,7 @@ Members:
 - Sasha Babicki
 - Syad Khan 
 
-Data analysis project for DSCI 522 (Data Science workflows)
+Data analysis project for DSCI 522: Data Science Workflows
 
 ## About
 
