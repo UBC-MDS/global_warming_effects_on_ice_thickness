@@ -72,8 +72,8 @@ pval <- read_csv("../results/p_value.csv")
         
 ```
 
-Using the permutation test we determined the p-value for January is 0.034. Our p-value from our test of independence of a difference in medians using permutation was \< $\alpha$, so we fail to reject our null hypothesis, $H_0$. Based on this evidence, it appears that there is no statistically significant difference between the median ice thickness measurements of January 1984 and January 1994.
+Using the permutation test we determined the p-value for January is 0.034. Our p-value from our test of independence of a difference in medians using permutation was \< $\alpha$, so we reject our null hypothesis, $H_0$. Based on this evidence, it appears that there is a statistically significant difference between the median ice thickness measurements of January 1984 and January 1994.
 
-In the next Milestone, we hope to explore additional months and years to see if we obtain the same result. As can be seen in the figure below, the years we have chosen have overlapping confidence intervals and the medians are not as dissimilar as other combinations of months and years.
+In the next Milestone, we hope to explore additional months and years to see if we obtain the same result. As can be seen in the figure below, the years we have chosen have overlapping confidence intervals and the medians are not as dissimilar as other combinations of months and years. Furthermore, the seasonality of the data (ice melting and freezing) every year lends itself well to more sophisticated time series analysis where this seasonality can be taken into account. This would create a more rigorous analysis and allow us to further explore the changes in ice thickness over time.
 
 # References

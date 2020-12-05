@@ -19,6 +19,7 @@ import altair as alt
 import pandas as pd
 from altair_saver import save
 from docopt import docopt
+import chromedriver_binary
 
 from __init__ import getlog
 
