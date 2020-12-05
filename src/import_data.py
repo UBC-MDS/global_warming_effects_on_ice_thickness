@@ -11,20 +11,16 @@ Options:
 """
 
 import logging
-import pandas as pd
+import os
 from pathlib import Path
+
+import pandas as pd
 from docopt import docopt
 
-opt = docopt(__doc__)
+from __init__ import getlog
 
-# init logging
-fmt_stream = logging.Formatter('%(levelname)-7s %(lineno)-4d %(name)-20s %(message)s')
-sh = logging.StreamHandler()
-sh.setLevel(logging.INFO)
-sh.setFormatter(fmt_stream)
-log = logging.getLogger(__name__)
-log.setLevel(logging.INFO)
-log.addHandler(sh)
+opt = docopt(__doc__)
+log = getlog(__file__)
 
 # set default download dir and url
 file_name = 'ice_thickness.csv'
@@ -60,13 +56,13 @@ def download_data(url : str = None, save_dir : str = None) -> None:
         
         # ask to create directory
         if not p_dir.exists():
-            ans = _input(msg=f'save_dir "{p_dir}" does not exist, create now?')
-            if not ans:
-                log.info('User declined to create save_dir.')
-                return
-            else:
-                log.info(f'Creating save_dir at {p_dir}')
-                p_dir.mkdir(parents=True)
+            # ans = _input(msg=f'save_dir "{p_dir}" does not exist, create now?')
+            # if not ans:
+            #     log.info('User declined to create save_dir.')
+            #     return
+            # else:
+            log.info(f'Creating save_dir at {p_dir}')
+            p_dir.mkdir(parents=True)
 
     # ask if okay to overwrite
     if p_data.exists():
@@ -153,5 +149,6 @@ def read_file(file_name : str) -> pd.DataFrame:
     return df
 
 if __name__ == "__main__":
-    
-    download_data(opt["--url"], opt["--out_path"])
+    download_data(
+        url=opt["--url"],
+        save_dir=opt["--out_path"])
