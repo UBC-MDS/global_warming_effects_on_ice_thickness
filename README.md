@@ -22,7 +22,13 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 
 ## Usage
 
-To replicate the analysis, clone this GitHub repository, install the dependencies listed below. Python dependencies can be installed using the conda environment provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml) file by running ```conda env create --file 522_grp_13.yaml``` from the root directory of this project. Once dependencies are installed, run the following commands at the command line/terminal from the root directory of this project:
+To replicate the analysis, clone this GitHub repository, install the dependencies listed below under the "Dependencies" header. 
+
+Python dependencies can be installed using the conda environment provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml) file by running ```conda env create --file 522_grp_13.yaml``` from the root directory of this project. Activate the environment with the command ```conda activate 522_grp_13```
+
+R dependencies can be installed by running the command ```install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite"))``` in the R terminal.
+
+Once dependencies are installed, run the following commands at the command line/terminal from the root directory of this project:
 
 ```shell
 make all
