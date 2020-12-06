@@ -5,12 +5,12 @@
 
 """This script reads processed data from a specified input filepath and produces EDA figures to
 to a specificed output filepaths
-Usage: eda_figure_export.py <input_path> <output_path_results> <output_path_eda>
+Usage: eda_figure_export.py --input_file=<<input_file> --output_path_results=<output_path_results> --output_path_eda=<output_path_eda>
 
 Options:
-<input_path>                Path to the input data file
-<output_path_results>       Path to save figures to for report
-<output_path_eda>           Path to save figures to for eda notebook
+--input_file=<input_file>                         Path to the input data file
+--output_path_results=<output_path_results>       Path to save figures to for report
+--output_path_eda=<output_path_eda>               Path to save figures to for eda notebook
 """
 
 from pathlib import Path
@@ -26,19 +26,19 @@ from __init__ import getlog
 opt = docopt(__doc__)
 log = getlog(__file__)
 
-def read_data(input_path):
-    """Read in preprocessed data from input_path, output as a pandas dataframe
+def read_data(input_file):
+    """Read in preprocessed data from input_file, output as a pandas dataframe
     
     Parameters
     ----------
-    input_path : str
+    input_file : str
         filepath to read data from
     """
     
     try:
-        df = pd.read_csv(input_path)
+        df = pd.read_csv(input_file)
     except:
-        log.error(f"File could not be read from: {input_path}")
+        log.error(f"File could not be read from: {input_file}")
         raise
         
     return df
@@ -63,23 +63,24 @@ def create_figures(df):
     # second figure of thickness dsitribution for analysis years 
     # prepare dataframe for facetted (monthly) density plot
     df_density = df.query('(year in [1984,1996]) & (month in [1,2,3])')
+    
     month_names = {1: "January", 2:"February", 3:"March"}
     df_density = df_density.replace({"month":month_names})
     
     density = (alt.Chart(df_density)
-        .transform_density(
-            'mean_ice_thickness',
-            groupby = ['year', 'month'],
-            as_=['mean_ice_thickness','density']
-        )
-        .mark_area(opacity=0.4).encode(
-           x=alt.X('mean_ice_thickness:Q', title="Ice Thickness (cm)"),
-           y=alt.Y('density:Q', title="Density of Observations"),
-           color=alt.Color('year:O', scale=alt.Scale(scheme="set1")))
-        .facet(column=alt.Row("month",
-                              title='Distribution of Ice Thickness by Month',
-                              sort=['January','February','March']), 
-               background='white'))
+            .transform_density(
+                'mean_ice_thickness',
+                groupby = ['year', 'month'],
+                as_=['mean_ice_thickness','density']
+            )
+            .mark_area(opacity=0.4).encode(
+               x=alt.X('mean_ice_thickness:Q', title="Ice Thickness (cm)"),
+               y=alt.Y('density:Q', title="Density of Observations"),
+               color=alt.Color('year:O', scale=alt.Scale(scheme="set1")))
+            .facet(column=alt.Row("month",
+                                  title='Distribution of Ice Thickness by Month',
+                                  sort=['January','February','March']), 
+                   background='white'))
     
     # third figure - boxplot of mean ice thickness
     month_boxplot = alt.Chart(df, 
@@ -131,8 +132,8 @@ def save_figures(figures : dict, save_dir : str, ext : str = 'svg'):
             log.error(f'Could not save figure at: {p}')
             raise # re raise error, don't continue if saving fig fails
  
-def main(input_path, output_path_results, output_path_eda):
-    df = read_data(input_path)
+def main(input_file, output_path_results, output_path_eda):
+    df = read_data(input_file)
     figure1, figure2, figure3, figure4 = create_figures(df)
 
     # create dicts of {fig_name : fig_obj}
@@ -152,7 +153,8 @@ def main(input_path, output_path_results, output_path_eda):
     save_figures(figures=m_eda, save_dir=output_path_eda, ext=ext)
 
 if __name__ == "__main__":
+    
     main(
-        input_path=opt["<input_path>"],
-        output_path_results=opt["<output_path_results>"],
-        output_path_eda=opt["<output_path_eda>"])
+        input_file=opt["--input_file"],
+        output_path_results=opt["--output_path_results"],
+        output_path_eda=opt["--output_path_eda"])
