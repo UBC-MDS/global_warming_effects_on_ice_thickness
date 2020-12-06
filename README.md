@@ -37,7 +37,7 @@ R dependencies can be installed by running the following command in the R termin
 install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite"))
 ``` 
 
-Once dependencies are installed, run the following commands at the command line from the root directory of this project:
+Once dependencies are installed, run the following command at the command line from the root directory of this project:
 
 ```shell
 make all
