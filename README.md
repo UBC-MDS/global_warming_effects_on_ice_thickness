@@ -37,16 +37,17 @@ make clean
 ## Dependencies
 
   - Python 3.8.0 and Python packages:
-      - docopt==0.6.2
-      - pandas
-      - ipykernel
-      - xlrd
-      - docopt
-      - altair
-      - pandas-profiling
+      - pandas=1.1.4
+      - ipykernel=5.3.4
+      - xlrd=1.2.0
+      - docopt=0.6.2
+      - altair=4.1.0
+      - pandas-profiling=2.9.0
       - pytest
-      - altair_saver
-      - chromedriver_binary
+      - altair_saver=0.5.0
+      - vega_datasets
+      - python-chromedriver-binary
+      
   - R 4.0.3 and R libraries:
       - tidyverse=1.3.0
       - dplyr=1.0.2
