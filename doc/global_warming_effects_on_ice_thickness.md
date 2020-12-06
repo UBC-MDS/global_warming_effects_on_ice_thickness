@@ -92,15 +92,17 @@ do further research to determine if this is the domain standard.
 
 The analysis was completed using the R and Python programming languages
 (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to
-to perform the analysis are tidyverse (Wickham 2017), dplyr (Wickham et
-al. 2015), datateacher (Boyce and Bourak 2020), infer (Grömping 2010),
-ggplot (Wickham 2016a), purrr (Wickham 2016b), knitr (Xie 2014), docopt
-(de Jonge 2018), and svglite (**wickham2020svglit?**). The Python
-packages used for the EDA and data wrangling scripts are pandas (team
-2020), docopt (Keleshev 2014) altair (Developers, n.d.), altair\_saver
-(Vanderplas 2019), pandas-profiling (Brugman 2019), pytest (Krekel et
-al. 2004), and chromedriver\_binary (Kaiser 2017). The permutation test
-analysis is based on [UBC MDS 552 Lab
+to perform the analysis are `tidyverse` (Wickham 2017), `dplyr` (Wickham
+et al. 2015), `datateacher` (Boyce and Bourak 2020), `infer` (Grömping
+2010), `ggplot2` (Wickham 2016a), `purrr` (Wickham 2016b), `knitr` (Xie
+2014), `docopt` (de Jonge 2018), `svglite` (Wickham et al. 2020), and
+`rmarkdown` (Allaire et al. 2020). The Python packages used for the EDA
+and data wrangling scripts are `pandas` (team 2020), `docopt` (Keleshev
+2014), `altair` (Developers, n.d.), `altair_saver` (Vanderplas 2019),
+`pandas-profiling` (Brugman 2019), `pytest` (Krekel et al. 2004), `xlrd`
+(Machin, n.d.), `ipykernel` (P’erez and Granger 2007) and
+`chromedriver_binary` (Kaiser 2017). The permutation test analysis is
+based on [UBC MDS 552 Lab
 2](https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd).
 The code used to perform the analysis and create this report can be
 found here:
@@ -127,7 +129,7 @@ in January
 
 Using the permutation test we determined the p-value for January is
 0.034. Our p-value from our test of independence of a difference in
-medians using permutation was less than *α* = 0.05, so we reject our
+medians using permutation was less than *α* = 0.05, so we reject our
 null hypothesis, *H*<sub>0</sub>. Based on this evidence, it appears
 that there is a statistically significant difference between the median
 ice thickness measurements of January 1984 and January 1994.
@@ -148,6 +150,15 @@ further explore the changes in ice thickness over time.
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
+<div id="ref-rmarkdown" class="csl-entry">
+
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin
+Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and
+Richard Iannone. 2020. *Rmarkdown: Dynamic Documents for r*.
+<https://github.com/rstudio/rmarkdown>.
+
+</div>
+
 <div id="ref-datateacher" class="csl-entry">
 
 Boyce, Hayley, and Jordan Bourak. 2020. *Datateachr: Data Collected to
@@ -156,7 +167,7 @@ Use for Teaching at the University of British Columbia*.
 
 </div>
 
-<div id="ref-pandasprofiling2019" class="csl-entry">
+<div id="ref-pandasprofiling" class="csl-entry">
 
 Brugman, Simon. 2019. “<span class="nocase">pandas-profiling:
 Exploratory Data Analysis for Python</span>.”
@@ -164,14 +175,14 @@ Exploratory Data Analysis for Python</span>.”
 
 </div>
 
-<div id="ref-docopt" class="csl-entry">
+<div id="ref-r-docopt" class="csl-entry">
 
 de Jonge, Edwin. 2018. *Docopt: Command-Line Interface Specification
 Language*. <https://CRAN.R-project.org/package=docopt>.
 
 </div>
 
-<div id="ref-Altair_Developers" class="csl-entry">
+<div id="ref-altair" class="csl-entry">
 
 Developers, Altair. n.d. *Altair 4.1.0*. *Python Package Index.
 Available:https://Altair-Viz.github.io/Index.html*.
@@ -194,18 +205,33 @@ Kaiser, Daniel. 2017. “Python Chromedriver Binary.”
 
 </div>
 
-<div id="ref-docoptpython" class="csl-entry">
+<div id="ref-python-docopt" class="csl-entry">
 
 Keleshev, Vladimir. 2014. *Docopt: Command-Line Interface Description
 Language*. <https://github.com/docopt/docopt>.
 
 </div>
 
-<div id="ref-pytestx.y" class="csl-entry">
+<div id="ref-pytest" class="csl-entry">
 
 Krekel, Holger, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe,
 Brianna Laugher, and Florian Bruhin. 2004. “Pytest x.y.”
 <https://github.com/pytest-dev/pytest>.
+
+</div>
+
+<div id="ref-xlrd" class="csl-entry">
+
+Machin, J. n.d. *Xlrd 0.9. 0*. *Python Package Index,\[Online\].
+Available:https://Xlrd.readthedocs.io/En/Latest/\#*.
+
+</div>
+
+<div id="ref-ipykernel" class="csl-entry">
+
+P’erez, Fernando, and Brian E. Granger. 2007. “IPython: A System for
+Interactive Scientific Computing.” *Computing in Science and
+Engineering* 9 (3): 21–29. <https://doi.org/10.1109/MCSE.2007.53>.
 
 </div>
 
@@ -217,7 +243,7 @@ Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 
 </div>
 
-<div id="ref-reback2020pandas" class="csl-entry">
+<div id="ref-pandas" class="csl-entry">
 
 team, The pandas development. 2020. *Pandas-Dev/Pandas: Pandas* (version
 latest). Zenodo. <https://doi.org/10.5281/zenodo.3509134>.
@@ -259,11 +285,18 @@ Springer-Verlag New York. <https://ggplot2.tidyverse.org>.
 
 </div>
 
-<div id="ref-wickham2015dplyr" class="csl-entry">
+<div id="ref-dplyr" class="csl-entry">
 
 Wickham, Hadley, Romain Francois, Lionel Henry, Kirill Müller, and
 others. 2015. “Dplyr: A Grammar of Data Manipulation.” *R Package
 Version 0.4* 3.
+
+</div>
+
+<div id="ref-svglite" class="csl-entry">
+
+Wickham, Hadley, L Henry, TJ Luciani, M Decorde, and V Lise. 2020.
+“Svglite: An’SVG’graphics Device.” R package version.
 
 </div>
 

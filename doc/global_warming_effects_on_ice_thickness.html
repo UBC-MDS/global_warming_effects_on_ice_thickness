@@ -59,7 +59,7 @@ Figure 2. Distribution of Ice Thickness by Month
 <p><em>H</em><sub>0</sub> = median<sub>1984</sub> − median<sub>1994</sub> = 0</p>
 <p><em>H</em><sub><em>A</em></sub> = median<sub>1984</sub> − median<sub>1994</sub> ≠ 0</p>
 <p>For our hypothesis test we chose an <em>α</em> = 0.05, however we would need to do further research to determine if this is the domain standard.</p>
-<p>The analysis was completed using the R and Python programming languages (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to to perform the analysis are tidyverse (Wickham 2017), dplyr (Wickham et al. 2015), datateacher (Boyce and Bourak 2020), infer (Grömping 2010), ggplot (Wickham 2016a), purrr (Wickham 2016b), knitr (Xie 2014), docopt (de Jonge 2018), and svglite (<strong>wickham2020svglit?</strong>). The Python packages used for the EDA and data wrangling scripts are pandas (team 2020), docopt (Keleshev 2014) altair (Developers, n.d.), altair_saver (Vanderplas 2019), pandas-profiling (Brugman 2019), pytest (Krekel et al. 2004), and chromedriver_binary (Kaiser 2017). The permutation test analysis is based on <a href="https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd">UBC MDS 552 Lab 2</a>. The code used to perform the analysis and create this report can be found here: <a href="https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness">here</a>.</p>
+<p>The analysis was completed using the R and Python programming languages (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to to perform the analysis are <code>tidyverse</code> (Wickham 2017), <code>dplyr</code> (Wickham et al. 2015), <code>datateacher</code> (Boyce and Bourak 2020), <code>infer</code> (Grömping 2010), <code>ggplot2</code> (Wickham 2016a), <code>purrr</code> (Wickham 2016b), <code>knitr</code> (Xie 2014), <code>docopt</code> (de Jonge 2018), <code>svglite</code> (Wickham et al. 2020), and <code>rmarkdown</code> (Allaire et al. 2020). The Python packages used for the EDA and data wrangling scripts are <code>pandas</code> (team 2020), <code>docopt</code> (Keleshev 2014), <code>altair</code> (Developers, n.d.), <code>altair_saver</code> (Vanderplas 2019), <code>pandas-profiling</code> (Brugman 2019), <code>pytest</code> (Krekel et al. 2004), <code>xlrd</code> (Machin, n.d.), <code>ipykernel</code> (P’erez and Granger 2007) and <code>chromedriver_binary</code> (Kaiser 2017). The permutation test analysis is based on <a href="https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd">UBC MDS 552 Lab 2</a>. The code used to perform the analysis and create this report can be found here: <a href="https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness">here</a>.</p>
 <h1 id="results">Results</h1>
 <p>We calculated that the difference between the sample medians of average ice thickness measurements by station for January of 1984 and January of 1994 and the corresponding 95% confidence intervals. Although our analysis only focused on January 1984 vs January of 1994, we can see from the plot below that there may be other combinations of years which may yield more significant results.</p>
 <div class="figure" style="text-align: center">
@@ -72,27 +72,32 @@ in January
 
 </div>
 
-<p>Using the permutation test we determined the p-value for January is 0.034. Our p-value from our test of independence of a difference in medians using permutation was less than <em>α</em> = 0.05, so we reject our null hypothesis, <em>H</em><sub>0</sub>. Based on this evidence, it appears that there is a statistically significant difference between the median ice thickness measurements of January 1984 and January 1994.</p>
+<p>Using the permutation test we determined the p-value for January is 0.034. Our p-value from our test of independence of a difference in medians using permutation was less than <em>α</em> = 0.05, so we reject our null hypothesis, <em>H</em><sub>0</sub>. Based on this evidence, it appears that there is a statistically significant difference between the median ice thickness measurements of January 1984 and January 1994.</p>
 <p>A time-series experiment that looks at the relationships between additional months and years would be of interest for future experiments. Unfortunately it is beyond the scope of this project, as we do not covered the required methods to do such an analysis yet in MDS. As can be seen in the Figure 3, the years we have chosen have overlapping confidence intervals and the medians are not as dissimilar as other combinations of months and years. Furthermore, the seasonality of the data (ice melting and freezing) every year lends itself well to more sophisticated time series analysis where this seasonality can be taken into account. This would create a more rigorous analysis and allow us to further explore the changes in ice thickness over time.</p>
 <h1 id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-rmarkdown" class="csl-entry">
+
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.</p>
+</div>
 
 <div id="ref-datateacher" class="csl-entry">
 
 <p>Boyce, Hayley, and Jordan Bourak. 2020. <em>Datateachr: Data Collected to Use for Teaching at the University of British Columbia</em>. <a href="https://github.com/UBC-MDS/datateachr">https://github.com/UBC-MDS/datateachr</a>.</p>
 </div>
 
-<div id="ref-pandasprofiling2019" class="csl-entry">
+<div id="ref-pandasprofiling" class="csl-entry">
 
 <p>Brugman, Simon. 2019. “<span class="nocase">pandas-profiling: Exploratory Data Analysis for Python</span>.” <a href="https://github.com/pandas-profiling/pandas-profiling">https://github.com/pandas-profiling/pandas-profiling</a>.</p>
 </div>
 
-<div id="ref-docopt" class="csl-entry">
+<div id="ref-r-docopt" class="csl-entry">
 
 <p>de Jonge, Edwin. 2018. <em>Docopt: Command-Line Interface Specification Language</em>. <a href="https://CRAN.R-project.org/package=docopt">https://CRAN.R-project.org/package=docopt</a>.</p>
 </div>
 
-<div id="ref-Altair_Developers" class="csl-entry">
+<div id="ref-altair" class="csl-entry">
 
 <p>Developers, Altair. n.d. <em>Altair 4.1.0</em>. <em>Python Package Index. Available:<a href="https://Altair-Viz.github.io/Index.html">https://Altair-Viz.github.io/Index.html</a></em>.</p>
 </div>
@@ -107,14 +112,24 @@ in January
 <p>Kaiser, Daniel. 2017. “Python Chromedriver Binary.” <a href="https://github.com/danielkaiser/python-chromedriver-binary/blob/master/LICENSE">https://github.com/danielkaiser/python-chromedriver-binary/blob/master/LICENSE</a>.</p>
 </div>
 
-<div id="ref-docoptpython" class="csl-entry">
+<div id="ref-python-docopt" class="csl-entry">
 
 <p>Keleshev, Vladimir. 2014. <em>Docopt: Command-Line Interface Description Language</em>. <a href="https://github.com/docopt/docopt">https://github.com/docopt/docopt</a>.</p>
 </div>
 
-<div id="ref-pytestx.y" class="csl-entry">
+<div id="ref-pytest" class="csl-entry">
 
 <p>Krekel, Holger, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe, Brianna Laugher, and Florian Bruhin. 2004. “Pytest x.y.” <a href="https://github.com/pytest-dev/pytest">https://github.com/pytest-dev/pytest</a>.</p>
+</div>
+
+<div id="ref-xlrd" class="csl-entry">
+
+<p>Machin, J. n.d. <em>Xlrd 0.9. 0</em>. <em>Python Package Index,[Online]. Available:<a href="https://Xlrd.readthedocs.io/En/Latest/">https://Xlrd.readthedocs.io/En/Latest/</a>#</em>.</p>
+</div>
+
+<div id="ref-ipykernel" class="csl-entry">
+
+<p>P’erez, Fernando, and Brian E. Granger. 2007. “IPython: A System for Interactive Scientific Computing.” <em>Computing in Science and Engineering</em> 9 (3): 21–29. <a href="https://doi.org/10.1109/MCSE.2007.53">https://doi.org/10.1109/MCSE.2007.53</a>.</p>
 </div>
 
 <div id="ref-R" class="csl-entry">
@@ -122,7 +137,7 @@ in January
 <p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
 </div>
 
-<div id="ref-reback2020pandas" class="csl-entry">
+<div id="ref-pandas" class="csl-entry">
 
 <p>team, The pandas development. 2020. <em>Pandas-Dev/Pandas: Pandas</em> (version latest). Zenodo. <a href="https://doi.org/10.5281/zenodo.3509134">https://doi.org/10.5281/zenodo.3509134</a>.</p>
 </div>
@@ -152,9 +167,14 @@ in January
 <p>———. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.</p>
 </div>
 
-<div id="ref-wickham2015dplyr" class="csl-entry">
+<div id="ref-dplyr" class="csl-entry">
 
 <p>Wickham, Hadley, Romain Francois, Lionel Henry, Kirill Müller, and others. 2015. “Dplyr: A Grammar of Data Manipulation.” <em>R Package Version 0.4</em> 3.</p>
+</div>
+
+<div id="ref-svglite" class="csl-entry">
+
+<p>Wickham, Hadley, L Henry, TJ Luciani, M Decorde, and V Lise. 2020. “Svglite: An’SVG’graphics Device.” R package version.</p>
 </div>
 
 <div id="ref-knitr" class="csl-entry">
