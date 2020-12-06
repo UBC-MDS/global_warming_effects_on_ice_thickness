@@ -22,19 +22,28 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 
 ## Usage
 
-To replicate the analysis, clone this GitHub repository, install the dependencies listed below under the "Dependencies" header. 
+To replicate the analysis, clone this GitHub repository, install all the dependencies listed under the "Dependencies" header. 
 
-Python dependencies can be installed using the conda environment provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml) file by running ```conda env create --file 522_grp_13.yaml``` from the root directory of this project. Activate the environment with the command ```conda activate 522_grp_13```
+Python dependencies can be installed using the conda environment file provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml). To create and activate the environment, run the following commands in the command line from the root directory of this project:
 
-R dependencies can be installed by running the command ```install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite"))``` in the R terminal.
+```shell
+conda env create --file 522_grp_13.yaml
+conda activate 522_grp_13
+```
 
-Once dependencies are installed, run the following commands at the command line/terminal from the root directory of this project:
+R dependencies can be installed by running the following command in the R terminal:
+
+```r
+install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite"))
+``` 
+
+Once dependencies are installed, run the following command at the command line from the root directory of this project:
 
 ```shell
 make all
 ```
 
-To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line from the root directory of this project:
 
 ```shell
 make clean
@@ -43,26 +52,27 @@ make clean
 ## Dependencies
 
   - Python 3.8.0 and Python packages:
-      - docopt==0.6.2
-      - pandas
-      - ipykernel
-      - xlrd
-      - docopt
-      - altair
-      - pandas-profiling
-      - pytest
-      - altair_saver
-      - chromedriver_binary
+      - pandas=1.1.4
+      - ipykernel=5.3.4
+      - xlrd=1.2.0
+      - docopt=0.6.2
+      - altair=4.1.0
+      - pandas-profiling=2.9.0
+      - pytest=6.1.2
+      - altair_saver=0.5.0
+      - vega_datasets=0.9.0 
+      - python-chromedriver-binary=88.0.*
+      
   - R 4.0.3 and R libraries:
-      - tidyverse
-      - dplyr
-      - datateachr
-      - infer
-      - ggplot2
-      - purrr
-      - knitr
-      - docopt
-      - svglite
+      - tidyverse=1.3.0
+      - dplyr=1.0.2
+      - datateachr=0.2.1
+      - infer=0.5.3
+      - ggplot2=3.3.2
+      - purrr=0.3.4
+      - knitr=1.30
+      - docopt=0.7.1
+      - svglite=1.2.3.2
 
 ## License
 
