@@ -59,7 +59,7 @@ Figure 2. Distribution of Ice Thickness by Month
 <p><em>H</em><sub>0</sub> = median<sub>1984</sub> − median<sub>1994</sub> = 0</p>
 <p><em>H</em><sub><em>A</em></sub> = median<sub>1984</sub> − median<sub>1994</sub> ≠ 0</p>
 <p>For our hypothesis test we chose an <em>α</em> = 0.05, however we would need to do further research to determine if this is the domain standard.</p>
-<p>The analysis was completed using the R and Python programming languages (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to to perform the analysis are <code>tidyverse</code> (Wickham 2017), <code>dplyr</code> (Wickham et al. 2015), <code>datateacher</code> (Boyce and Bourak 2020), <code>infer</code> (Grömping 2010), <code>ggplot2</code> (Wickham 2016a), <code>purrr</code> (Wickham 2016b), <code>knitr</code> (Xie 2014), <code>docopt</code> (de Jonge 2018), <code>svglite</code> (Wickham et al. 2020), and <code>rmarkdown</code> (Allaire et al. 2020). The Python packages used for the EDA and data wrangling scripts are <code>pandas</code> (team 2020), <code>docopt</code> (Keleshev 2014), <code>altair</code> (Developers, n.d.), <code>altair_saver</code> (Vanderplas 2019), <code>pandas-profiling</code> (Brugman 2019), <code>pytest</code> (Krekel et al. 2004), <code>xlrd</code> (Machin, n.d.), <code>ipykernel</code> (P’erez and Granger 2007) and <code>chromedriver_binary</code> (Kaiser 2017). The permutation test analysis is based on <a href="https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd">UBC MDS 552 Lab 2</a>. The code used to perform the analysis and create this report can be found here: <a href="https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness">here</a>.</p>
+<p>The analysis was completed using the R and Python programming languages (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to to perform the analysis are <code>tidyverse</code> (Wickham et al. 2019), <code>dplyr</code> (Wickham et al. 2015), <code>datateacher</code> (Boyce and Bourak 2020), <code>infer</code> (Grömping 2010), <code>ggplot2</code> (Wickham 2016), <code>purrr</code> (Henry and Wickham 2020), <code>knitr</code> (Xie 2014), <code>docopt</code> (De Jonge 2018), <code>svglite</code> (Wickham et al. 2020), and <code>rmarkdown</code> (Allaire et al. 2020). The Python packages used for the EDA and data wrangling scripts are <code>pandas</code> (McKinney 2015), <code>docopt</code> (Keleshev 2014), <code>altair</code> (Developers, n.d.), <code>altair_saver</code> (Vanderplas 2019), <code>pandas-profiling</code> (Brugman 2019), <code>pytest</code> (Krekel et al. 2004), <code>xlrd</code> (Machin, n.d.), <code>ipykernel</code> (P’erez and Granger 2007) and <code>chromedriver_binary</code> (Kaiser 2017). The permutation test analysis is based on <a href="https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd">UBC MDS 552 Lab 2</a>. The code used to perform the analysis and create this report can be found here: <a href="https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness">here</a>.</p>
 <h1 id="results">Results</h1>
 <p>We calculated that the difference between the sample medians of average ice thickness measurements by station for January of 1984 and January of 1994 and the corresponding 95% confidence intervals. Although our analysis only focused on January 1984 vs January of 1994, we can see from the plot below that there may be other combinations of years which may yield more significant results.</p>
 <div class="figure" style="text-align: center">
@@ -94,7 +94,7 @@ in January
 
 <div id="ref-r-docopt" class="csl-entry">
 
-<p>de Jonge, Edwin. 2018. <em>Docopt: Command-Line Interface Specification Language</em>. <a href="https://CRAN.R-project.org/package=docopt">https://CRAN.R-project.org/package=docopt</a>.</p>
+<p>De Jonge, Edwin. 2018. <em>Docopt: Command-Line Interface Specification Language</em>. <a href="https://CRAN.R-project.org/package=docopt">https://CRAN.R-project.org/package=docopt</a>.</p>
 </div>
 
 <div id="ref-altair" class="csl-entry">
@@ -105,6 +105,11 @@ in January
 <div id="ref-infer" class="csl-entry">
 
 <p>Grömping, Ulrike. 2010. “Inference with Linear Equality and Inequality Constraints Using R: The Package <span class="nocase">ic.infer</span>.” <em>Journal of Statistical Software</em> 33 (10): 1–31. <a href="http://www.jstatsoft.org/v33/i10/">http://www.jstatsoft.org/v33/i10/</a>.</p>
+</div>
+
+<div id="ref-purrr" class="csl-entry">
+
+<p>Henry, Lionel, and Hadley Wickham. 2020. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr">https://CRAN.R-project.org/package=purrr</a>.</p>
 </div>
 
 <div id="ref-chromedriver_binary" class="csl-entry">
@@ -127,6 +132,11 @@ in January
 <p>Machin, J. n.d. <em>Xlrd 0.9. 0</em>. <em>Python Package Index,[Online]. Available:<a href="https://Xlrd.readthedocs.io/En/Latest/">https://Xlrd.readthedocs.io/En/Latest/</a>#</em>.</p>
 </div>
 
+<div id="ref-pandas" class="csl-entry">
+
+<p>McKinney, Wes. 2015. “Pandas, Python Data Analysis Library.” <em>See Http://Pandas. Pydata. Org</em>.</p>
+</div>
+
 <div id="ref-ipykernel" class="csl-entry">
 
 <p>P’erez, Fernando, and Brian E. Granger. 2007. “IPython: A System for Interactive Scientific Computing.” <em>Computing in Science and Engineering</em> 9 (3): 21–29. <a href="https://doi.org/10.1109/MCSE.2007.53">https://doi.org/10.1109/MCSE.2007.53</a>.</p>
@@ -135,11 +145,6 @@ in January
 <div id="ref-R" class="csl-entry">
 
 <p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
-</div>
-
-<div id="ref-pandas" class="csl-entry">
-
-<p>team, The pandas development. 2020. <em>Pandas-Dev/Pandas: Pandas</em> (version latest). Zenodo. <a href="https://doi.org/10.5281/zenodo.3509134">https://doi.org/10.5281/zenodo.3509134</a>.</p>
 </div>
 
 <div id="ref-Python" class="csl-entry">
@@ -154,17 +159,12 @@ in January
 
 <div id="ref-ggplot" class="csl-entry">
 
-<p>Wickham, Hadley. 2016a. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
-</div>
-
-<div id="ref-purrr" class="csl-entry">
-
-<p>———. 2016b. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr">https://CRAN.R-project.org/package=purrr</a>.</p>
+<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
 </div>
 
 <div id="ref-tidyverse" class="csl-entry">
 
-<p>———. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+<p>Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the <span class="nocase">tidyverse</span>.” <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.</p>
 </div>
 
 <div id="ref-dplyr" class="csl-entry">
