@@ -43,10 +43,10 @@ make clean
       - docopt=0.6.2
       - altair=4.1.0
       - pandas-profiling=2.9.0
-      - pytest
+      - pytest=6.1.2
       - altair_saver=0.5.0
-      - vega_datasets
-      - python-chromedriver-binary
+      - vega_datasets=0.9.0 
+      - python-chromedriver-binary=88.0.*
       
   - R 4.0.3 and R libraries:
       - tidyverse=1.3.0
