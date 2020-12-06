@@ -92,17 +92,17 @@ do further research to determine if this is the domain standard.
 
 The analysis was completed using the R and Python programming languages
 (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to
-to perform the analysis are `tidyverse` (Wickham 2017), `dplyr` (Wickham
-et al. 2015), `datateacher` (Boyce and Bourak 2020), `infer` (Grömping
-2010), `ggplot2` (Wickham 2016a), `purrr` (Wickham 2016b), `knitr` (Xie
-2014), `docopt` (de Jonge 2018), `svglite` (Wickham et al. 2020), and
-`rmarkdown` (Allaire et al. 2020). The Python packages used for the EDA
-and data wrangling scripts are `pandas` (team 2020), `docopt` (Keleshev
-2014), `altair` (Developers, n.d.), `altair_saver` (Vanderplas 2019),
-`pandas-profiling` (Brugman 2019), `pytest` (Krekel et al. 2004), `xlrd`
-(Machin, n.d.), `ipykernel` (P’erez and Granger 2007) and
-`chromedriver_binary` (Kaiser 2017). The permutation test analysis is
-based on [UBC MDS 552 Lab
+to perform the analysis are `tidyverse` (Wickham et al. 2019), `dplyr`
+(Wickham et al. 2015), `datateacher` (Boyce and Bourak 2020), `infer`
+(Grömping 2010), `ggplot2` (Wickham 2016), `purrr` (Henry and Wickham
+2020), `knitr` (Xie 2014), `docopt` (De Jonge 2018), `svglite` (Wickham
+et al. 2020), and `rmarkdown` (Allaire et al. 2020). The Python packages
+used for the EDA and data wrangling scripts are `pandas` (McKinney
+2015), `docopt` (Keleshev 2014), `altair` (Developers, n.d.),
+`altair_saver` (Vanderplas 2019), `pandas-profiling` (Brugman 2019),
+`pytest` (Krekel et al. 2004), `xlrd` (Machin, n.d.), `ipykernel`
+(P’erez and Granger 2007) and `chromedriver_binary` (Kaiser 2017). The
+permutation test analysis is based on [UBC MDS 552 Lab
 2](https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd).
 The code used to perform the analysis and create this report can be
 found here:
@@ -177,7 +177,7 @@ Exploratory Data Analysis for Python</span>.”
 
 <div id="ref-r-docopt" class="csl-entry">
 
-de Jonge, Edwin. 2018. *Docopt: Command-Line Interface Specification
+De Jonge, Edwin. 2018. *Docopt: Command-Line Interface Specification
 Language*. <https://CRAN.R-project.org/package=docopt>.
 
 </div>
@@ -195,6 +195,13 @@ Grömping, Ulrike. 2010. “Inference with Linear Equality and Inequality
 Constraints Using R: The Package <span class="nocase">ic.infer</span>.”
 *Journal of Statistical Software* 33 (10): 1–31.
 <http://www.jstatsoft.org/v33/i10/>.
+
+</div>
+
+<div id="ref-purrr" class="csl-entry">
+
+Henry, Lionel, and Hadley Wickham. 2020. *Purrr: Functional Programming
+Tools*. <https://CRAN.R-project.org/package=purrr>.
 
 </div>
 
@@ -227,6 +234,13 @@ Available:https://Xlrd.readthedocs.io/En/Latest/\#*.
 
 </div>
 
+<div id="ref-pandas" class="csl-entry">
+
+McKinney, Wes. 2015. “Pandas, Python Data Analysis Library.” *See
+Http://Pandas. Pydata. Org*.
+
+</div>
+
 <div id="ref-ipykernel" class="csl-entry">
 
 P’erez, Fernando, and Brian E. Granger. 2007. “IPython: A System for
@@ -240,13 +254,6 @@ Engineering* 9 (3): 21–29. <https://doi.org/10.1109/MCSE.2007.53>.
 R Core Team. 2019. *R: A Language and Environment for Statistical
 Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 <https://www.R-project.org/>.
-
-</div>
-
-<div id="ref-pandas" class="csl-entry">
-
-team, The pandas development. 2020. *Pandas-Dev/Pandas: Pandas* (version
-latest). Zenodo. <https://doi.org/10.5281/zenodo.3509134>.
 
 </div>
 
@@ -266,22 +273,17 @@ Vanderplas, Jake. 2019. “Altair Saver.”
 
 <div id="ref-ggplot" class="csl-entry">
 
-Wickham, Hadley. 2016a. *Ggplot2: Elegant Graphics for Data Analysis*.
+Wickham, Hadley. 2016. *Ggplot2: Elegant Graphics for Data Analysis*.
 Springer-Verlag New York. <https://ggplot2.tidyverse.org>.
-
-</div>
-
-<div id="ref-purrr" class="csl-entry">
-
-———. 2016b. *Purrr: Functional Programming Tools*.
-<https://CRAN.R-project.org/package=purrr>.
 
 </div>
 
 <div id="ref-tidyverse" class="csl-entry">
 
-———. 2017. *Tidyverse: Easily Install and Load the ’Tidyverse’*.
-<https://CRAN.R-project.org/package=tidyverse>.
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
+D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
+“Welcome to the <span class="nocase">tidyverse</span>.” *Journal of Open
+Source Software* 4 (43): 1686. <https://doi.org/10.21105/joss.01686>.
 
 </div>
 
