@@ -6,11 +6,11 @@ all: data/raw/ice_thickness.csv data/processed/ice_thickness.csv results/density
 
 # download data
 data/raw/ice_thickness.csv: src/import_data.py
-	python src/import_data.py --out_path=data/raw --url="https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls"
+	python src/import_data.py --output_path=data/raw --url="https://www.canada.ca/content/dam/eccc/migration/main/data/ice/products/ice-thickness-program-collection/ice-thickness-program-collection-1947-2002/original_program_data_20030304.xls"
 
 # pre-process data - clean and group monthly
 data/processed/ice_thickness.csv: src/pre_process.py
-	python src/pre_process.py --in_file=data/raw/ice_thickness.csv --out_file=data/processed/ice_thickness.csv
+	python src/pre_process.py --input_file=data/raw/ice_thickness.csv --output_file=data/processed/ice_thickness.csv
 
 # eda
 results/median_thickness_year.svg results/density.svg: src/eda_figure_export.py
