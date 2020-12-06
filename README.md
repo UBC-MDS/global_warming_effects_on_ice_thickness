@@ -22,19 +22,28 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 
 ## Usage
 
-To replicate the analysis, clone this GitHub repository, install the dependencies listed below under the "Dependencies" header. 
+To replicate the analysis, clone this GitHub repository, install all the dependencies listed under the "Dependencies" header. 
 
-Python dependencies can be installed using the conda environment provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml) file by running ```conda env create --file 522_grp_13.yaml``` from the root directory of this project. Activate the environment with the command ```conda activate 522_grp_13```
+Python dependencies can be installed using the conda environment file provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml). To create and activate the environment, run the following commands in the command line from the root directory of this project:
 
-R dependencies can be installed by running the command ```install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite"))``` in the R terminal.
+```shell
+conda env create --file 522_grp_13.yaml
+conda activate 522_grp_13
+```
 
-Once dependencies are installed, run the following commands at the command line/terminal from the root directory of this project:
+R dependencies can be installed by running the following command in the R terminal:
+
+```r
+install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite"))
+``` 
+
+Once dependencies are installed, run the following commands at the command line from the root directory of this project:
 
 ```shell
 make all
 ```
 
-To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line from the root directory of this project:
 
 ```shell
 make clean
