@@ -4,13 +4,14 @@ channels:
   - defaults
 dependencies:
   - python=3.8
-  - pandas
-  - ipykernel
-  - xlrd
-  - docopt
-  - altair
-  - pandas-profiling
-  - pytest
-  - altair_saver
-  - vega_datasets
+  - pandas=1.1.4
+  - ipykernel=5.3.4
+  - xlrd=1.2.0
+  - docopt=0.6.2
+  - altair=4.1.0
+  - pandas-profiling=2.9.0
+  - pytest=6.1.2
+  - altair_saver=0.5.0
+  - vega_datasets=0.9.0
+  - python-chromedriver-binary=88.0.*
 prefix: /opt/miniconda3/envs/522_grp_13
