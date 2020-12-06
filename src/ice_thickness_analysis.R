@@ -150,7 +150,7 @@ get_p_value <- function(month, years, df, reps) {
 #' make_pvalue_table(df, "data/img_folder")
 make_pvalue_table <- function(df_in, dir_out, reps = 1000, years = c(1984, 1994), save_img = FALSE) {
     
-    months <- c(1, 2, 3)
+    months <- c(1)
 
     # filter df two specific years
     df <- df_in %>%

@@ -126,7 +126,7 @@ in January
 </div>
 
 Using the permutation test we determined the p-value for January is
-**0.034**. Our p-value from our test of independence of a difference in
+0.034. Our p-value from our test of independence of a difference in
 medians using permutation was less than *α* = 0.05, so we reject our
 null hypothesis, *H*<sub>0</sub>. Based on this evidence, it appears
 that there is a statistically significant difference between the median
