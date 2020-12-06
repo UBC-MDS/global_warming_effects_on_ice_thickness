@@ -13,8 +13,8 @@ data/processed/ice_thickness.csv: src/pre_process.py
 	python src/pre_process.py --in_file=data/raw/ice_thickness.csv --out_file=data/processed/ice_thickness.csv
 
 # eda
-results/density.svg: src/eda_figure_export.py
-	python src/eda_figure_export.py data/processed/ice_thickness.csv results src/EDA_notebook_visuals
+results/median_thickness_year.svg results/density.svg: src/eda_figure_export.py
+	python src/eda_figure_export.py --input_file=data/processed/ice_thickness.csv --output_path_results=results --output_path_eda=src/EDA_notebook_visuals
 
 # analysis - calc p-value
 results/p_value.csv results/median_ice_thickness_ci.svg: src/ice_thickness_analysis.R
