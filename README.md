@@ -73,6 +73,7 @@ make clean
       - knitr=1.30
       - docopt=0.7.1
       - svglite=1.2.3.2
+      - rmarkdown=2.5
 
 ## License
 
