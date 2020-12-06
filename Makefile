@@ -2,7 +2,7 @@
 # author: Jayme Gordon
 # date: 2020-12-03
 
-all: data/raw/ice_thickness.csv data/processed/ice_thickness.csv results/density.svg results/median_ice_thickness_ci.svg results/p_value.csv doc/global_warming_effects_on_ice_thickness.md #doc/global_warming_effects_on_ice_thickness.pdf
+all: data/raw/ice_thickness.csv data/processed/ice_thickness.csv results/density.svg results/median_ice_thickness_ci.svg results/p_value.csv doc/global_warming_effects_on_ice_thickness.md doc/global_warming_effects_on_ice_thickness.html
 
 # download data
 data/raw/ice_thickness.csv: src/import_data.py
@@ -24,12 +24,7 @@ results/p_value.csv results/median_ice_thickness_ci.svg: src/ice_thickness_analy
 doc/global_warming_effects_on_ice_thickness.md: doc/global_warming_effects_on_ice_thickness.Rmd doc/ice_thickness_refs.bib
 	Rscript -e "rmarkdown::render('doc/global_warming_effects_on_ice_thickness.Rmd', output_format = 'github_document')"
 
-# TODO not working!!
-# render pdf
-# doc/global_warming_effects_on_ice_thickness.pdf: doc/global_warming_effects_on_ice_thickness.Rmd doc/ice_thickness_refs.bib
-# 	Rscript -e "rmarkdown::render('doc/global_warming_effects_on_ice_thickness.Rmd', output_format = 'pdf_document')"
-
 clean:
 	rm -rf data
 	rm -rf results
-	rm -rf doc/global_warming_effects_on_ice_thickness.md doc/global_warming_effects_on_ice_thickness.pdf
+	rm -rf doc/global_warming_effects_on_ice_thickness.md doc/global_warming_effects_on_ice_thickness.html
