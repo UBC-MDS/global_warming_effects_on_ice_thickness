@@ -24,10 +24,6 @@ results/p_value.csv results/median_ice_thickness_ci.svg: src/ice_thickness_analy
 doc/global_warming_effects_on_ice_thickness.md: doc/global_warming_effects_on_ice_thickness.Rmd doc/ice_thickness_refs.bib
 	Rscript -e "rmarkdown::render('doc/global_warming_effects_on_ice_thickness.Rmd', output_format = 'github_document')"
 
-# TODO not working!!
-# render pdf
-# doc/global_warming_effects_on_ice_thickness.pdf: doc/global_warming_effects_on_ice_thickness.Rmd doc/ice_thickness_refs.bib
-# 	Rscript -e "rmarkdown::render('doc/global_warming_effects_on_ice_thickness.Rmd', output_format = 'pdf_document')"
 
 clean:
 	rm -rf data
