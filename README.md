@@ -48,15 +48,15 @@ make clean
       - altair_saver
       - chromedriver_binary
   - R 4.0.3 and R libraries:
-      - tidyverse
-      - dplyr
-      - datateachr
-      - infer
-      - ggplot2
-      - purrr
-      - knitr
-      - docopt
-      - svglite
+      - tidyverse=1.3.0
+      - dplyr=1.0.2
+      - datateachr=0.2.1
+      - infer=0.5.3
+      - ggplot2=3.3.2
+      - purrr=0.3.4
+      - knitr=1.30
+      - docopt=0.7.1
+      - svglite=1.2.3.2
 
 ## License
 
