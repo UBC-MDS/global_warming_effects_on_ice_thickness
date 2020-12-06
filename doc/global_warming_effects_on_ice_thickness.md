@@ -10,9 +10,10 @@ temperatures and a curiosity of how this warming impacts the depth of
 the ice. The dataset used in this analysis contains measurements of ice
 thickness at various established monitoring stations in the Canadian
 Arctic on a weekly basis. Using exploratory data analysis (EDA) we
-determined that the data are skewed. We decided to use a hypothesis test
-for independence of a difference in medians using permutation for our
-analysis.
+determined that the data is right skewed. This informed our decision to
+compare the median ice thicknesses for 1984 and 1996 using a hypothesis
+test for independence for difference in medians using permutation for
+our analysis.
 
 # Methods
 
@@ -40,7 +41,7 @@ Figure 1. Median Ice Thickness Over Time
 </div>
 
 The above figure shows the median ice thicknesses of the monthly station
-averages for 1981 to 2002. Excluding the year 2002, there looks to be a
+averages from 1981 to 2002. Excluding the year 2002, there looks to be a
 downward trend from the earlier years where the median thickness is
 around 90 centimeters to the later years where it hovers around 60-70
 centimeters. Our analysis aims to validate this trend and determine if
@@ -48,33 +49,34 @@ the downward trend is statistically significant.
 
 Let’s take a look at the density distribution to determine whether the
 difference in median thickness of ice is subject to a certain month or
-whether this difference is present through all months.
+whether this difference is present throughout all months.
 
 <div class="figure" style="text-align: center">
 
-<img src="../results/density.jpg" alt="Figure 2. Distribution of Ice Thikness by Month" width="100%" />
+<img src="../results/density.jpg" alt="Figure 2. Distribution of Ice Thickness by Month" width="100%" />
 <p class="caption">
-Figure 2. Distribution of Ice Thikness by Month
+Figure 2. Distribution of Ice Thickness by Month
 </p>
 
 </div>
 
 We can see that 1984 distribution has more mass to the right of the
-1996, meaning more observations that record thicker ice. The pattern is
-present for all three months, however, January shows the sharpest
-example of this whereas the effect is less prominent in March.
+1996, meaning that a higher proportion of observations that recorded
+thicker ice measurements. The pattern is present for all three months,
+however, January shows the sharpest example of this whereas the effect
+is less prominent in March.
 
 In this analysis, we will compare the median ice thickness measurements
-between January-March of 1984 and January-March of 1994 and conduct a
-hypothesis test to determine if the difference in medians is
-statistically significant. We decided to use a hypothesis test for
-independence of a difference in medians using permutation. The
-permutation test assumes that all observations are independent, so we
-have adjusted our data in order to meet this condition. The ice
-thickness measurements are taken weekly, so we decided to take the mean
-of the ice thickness per station per month in order to compare with
-other years. With this methodology we satisfy the condition that the
-observations are from different individuals (stations).
+between January of 1984 and January of 1994 and conduct a hypothesis
+test to determine if the difference in medians is statistically
+significant. We decided to use a hypothesis test for independence of a
+difference in medians using permutation. The permutation test assumes
+that all observations are independent, so we have adjusted our data in
+order to meet this condition. The ice thickness measurements are taken
+weekly, so we decided to take the mean of the ice thickness per station
+per month in order to compare with other years. With this methodology we
+satisfy the condition that the observations are from different
+individuals (stations).
 
 Our null hypothesis is that the median ice thickness in 1984 is the same
 as the median ice thickness in 1994. Our alternative hypothesis is that
@@ -107,8 +109,11 @@ found here:
 # Results
 
 We calculated that the difference between the sample medians of average
-ice thickness measurements by station for January-March of 1984 and
-January-March of 1994 and the corresponding 95% confidence intervals.
+ice thickness measurements by station for January of 1984 and January of
+1994 and the corresponding 95% confidence intervals. Although our
+analysis only focused on January 1984 vs January of 1994, we can see
+from the plot below that there may be other combinations of years which
+may yield more significant results.
 
 <div class="figure" style="text-align: center">
 
@@ -121,21 +126,23 @@ in January
 </div>
 
 Using the permutation test we determined the p-value for January is
-0.034. Our p-value from our test of independence of a difference in
-medians using permutation was &lt; *α*, so we reject our null
-hypothesis, *H*<sub>0</sub>. Based on this evidence, it appears that
-there is a statistically significant difference between the median ice
-thickness measurements of January 1984 and January 1994.
+**0.034**. Our p-value from our test of independence of a difference in
+medians using permutation was less than *α* = 0.05, so we reject our
+null hypothesis, *H*<sub>0</sub>. Based on this evidence, it appears
+that there is a statistically significant difference between the median
+ice thickness measurements of January 1984 and January 1994.
 
-In the next Milestone, we hope to explore additional months and years to
-see if we obtain the same result. As can be seen in the figure below,
-the years we have chosen have overlapping confidence intervals and the
-medians are not as dissimilar as other combinations of months and years.
-Furthermore, the seasonality of the data (ice melting and freezing)
-every year lends itself well to more sophisticated time series analysis
-where this seasonality can be taken into account. This would create a
-more rigorous analysis and allow us to further explore the changes in
-ice thickness over time.
+A time-series experiment that looks at the relationships between
+additional months and years would be of interest for future experiments.
+Unfortunately it is beyond the scope of this project, as we do not
+covered the required methods to do such an analysis yet in MDS. As can
+be seen in the Figure 3, the years we have chosen have overlapping
+confidence intervals and the medians are not as dissimilar as other
+combinations of months and years. Furthermore, the seasonality of the
+data (ice melting and freezing) every year lends itself well to more
+sophisticated time series analysis where this seasonality can be taken
+into account. This would create a more rigorous analysis and allow us to
+further explore the changes in ice thickness over time.
 
 # References
 
