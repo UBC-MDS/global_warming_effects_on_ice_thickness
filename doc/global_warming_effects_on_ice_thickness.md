@@ -30,9 +30,9 @@ Canada and the specific dataset we are using is publicly available
 
 First let’s have a look at the median ice thickness from 1981 to 2002.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 
-<img src="../results/median_thickness_year.svg" alt="Figure 1. Median Ice Thickness Over Time" width="100%" />
+<img src="../results/median_thickness_year.svg" alt="Figure 1. Median Ice Thickness Over Time" width="75%" />
 <p class="caption">
 Figure 1. Median Ice Thickness Over Time
 </p>
@@ -50,9 +50,9 @@ Let’s take a look at the density distribution to determine whether the
 difference in median thickness of ice is subject to a certain month or
 whether this difference is present through all months.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 
-<img src="../results/density.svg" alt="Figure 2. Distribution of Ice Thikness by Month" width="100%" />
+<img src="../results/density.jpg" alt="Figure 2. Distribution of Ice Thikness by Month" width="100%" />
 <p class="caption">
 Figure 2. Distribution of Ice Thikness by Month
 </p>
@@ -110,7 +110,7 @@ We calculated that the difference between the sample medians of average
 ice thickness measurements by station for January-March of 1984 and
 January-March of 1994 and the corresponding 95% confidence intervals.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 
 <img src="../results/median_ice_thickness_ci.svg" alt="Figure 3. 95% Confidence Intervals for Median Ice Thickness in per Year in January" width="80%" />
 <p class="caption">

@@ -11,7 +11,7 @@ bibliography: ice_thickness_refs.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 library(knitr)
 library(kableExtra)
 library(tidyverse)
@@ -31,7 +31,7 @@ The dataset used in this analysis contains measurements of ice thickness at vari
 
 First let's have a look at the median ice thickness from 1981 to 2002.
 
-```{r, median over time, echo=FALSE, fig.cap="Figure 1. Median Ice Thickness Over Time", out.width = '100%'}
+```{r, median over time, fig.cap="Figure 1. Median Ice Thickness Over Time", out.width = '75%'}
 knitr::include_graphics("../results/median_thickness_year.svg")
 ```
 
@@ -40,7 +40,7 @@ The above figure shows the median ice thicknesses of the monthly station average
 Let's take a look at the density distribution to determine whether the difference in median thickness of ice is subject to a certain month or whether this difference is present through all months.
 
 ```{r, density, echo=FALSE, fig.cap="Figure 2. Distribution of Ice Thikness by Month", out.width = '100%'}
-knitr::include_graphics("../results/density.svg")
+knitr::include_graphics("../results/density.jpg")
 ```
 
 We can see that 1984 distribution has more mass to the right of the 1996, meaning more observations that record thicker ice. The pattern is present for all three months, however, January shows the sharpest example of this whereas the effect is less prominent in March.
