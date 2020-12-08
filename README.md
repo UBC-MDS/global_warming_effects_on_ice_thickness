@@ -52,28 +52,28 @@ make clean
 ## Dependencies
 
   - Python 3.8.0 and Python packages:
-      - pandas=1.1.4
-      - ipykernel=5.3.4
-      - xlrd=1.2.0
-      - docopt=0.6.2
-      - altair=4.1.0
-      - pandas-profiling=2.9.0
-      - pytest=6.1.2
-      - altair_saver=0.5.0
-      - vega_datasets=0.9.0 
-      - python-chromedriver-binary=88.0.*
+      - pandas==1.1.4
+      - ipykernel==5.3.4
+      - xlrd==1.2.0
+      - docopt==0.6.2
+      - altair==4.1.0
+      - pandas-profiling==2.9.0
+      - pytest==6.1.2
+      - altair_saver==0.5.0
+      - vega_datasets==0.9.0 
+      - python-chromedriver-binary==88.0.*
       
   - R 4.0.3 and R libraries:
-      - tidyverse=1.3.0
-      - dplyr=1.0.2
-      - datateachr=0.2.1
-      - infer=0.5.3
-      - ggplot2=3.3.2
-      - purrr=0.3.4
-      - knitr=1.30
-      - docopt=0.7.1
-      - svglite=1.2.3.2
-      - rmarkdown=2.5
+      - tidyverse==1.3.0
+      - dplyr==1.0.2
+      - datateachr==0.2.1
+      - infer==0.5.3
+      - ggplot2==3.3.2
+      - purrr==0.3.4
+      - knitr==1.30
+      - docopt==0.7.1
+      - svglite==1.2.3.2
+      - rmarkdown==2.5
 
 ## License
 
