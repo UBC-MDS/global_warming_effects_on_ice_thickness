@@ -3,11 +3,11 @@
 
 """Read and process data from local filepath and save locally as csv.
 
-Usage: pre_proccess.py --in_file=<in_file> --out_file=<out_file>
+Usage: pre_proccess.py --input_file=<input_file> --output_file=<output_file>
 
 Options:
---in_file=<in_file>    The local path (including filename) of the input file
---out_file=<out_file>  The local path (including filename) of where to write the processed output file
+--input_file=<input_file>    The local path (including filename) of the input file
+--output_file=<output_file>  The local path (including filename) of where to write the processed output file
 """
 from pathlib import Path
 
@@ -24,22 +24,22 @@ DEFAULT_PATHS = {
     "out" :  "../data/processed/ice_thickness.csv"
 }
 
-def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"]):
+def process_data(input_file = DEFAULT_PATHS["in"], output_file = DEFAULT_PATHS["out"]):
     """Read and process thickness data input_path, write to csv in output_path
 
     Parameters
     ----------
-    in_file : str, optional
+    input_file : str, optional
         filepath to download data, default in DEFAULT_PATHS
-    out_file : str, optional
+    output_file : str, optional
         filepath to save data, default in DEFAULT_PATHS
     """    
 
     try:
-        df = pd.read_csv(in_file)
+        df = pd.read_csv(input_file)
         log.info(f'loaded dataframe with shape: {df.shape}')
     except:
-        log.error(f'File could not be read at: {in_file}')
+        log.error(f'File could not be read at: {input_file}')
         raise
 
     df_filtered = df.copy()
@@ -67,18 +67,18 @@ def process_data(in_file = DEFAULT_PATHS["in"], out_file = DEFAULT_PATHS["out"])
     grouped_df = grouped_df[["station_id", "station_name", "month", "year", "mean_ice_thickness"]]
     
     try:
-        p = Path(out_file)
+        p = Path(output_file)
         if not p.parent.exists():
             p.parent.mkdir(parents=True)
             
-        grouped_df.to_csv(out_file, index=False)
+        grouped_df.to_csv(output_file, index=False)
         log.info(f'Successfully pre-processed df to shape: {grouped_df.shape}')
     except: 
-        log.error(f"File could not be saved at: {out_file}")
+        log.error(f"File could not be saved at: {output_file}")
         raise
         
     return grouped_df
 
 if __name__ == "__main__":
     
-    process_data(opt["--in_file"], opt["--out_file"])
+    process_data(opt["--input_file"], opt["--output_file"])

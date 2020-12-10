@@ -3,11 +3,11 @@
 
 """Download data from the web to save locally as csv and provide functions for reading locally.
 
-Usage: src/import_data.py [--url=<url>] [--out_path=<out_path>]
+Usage: src/import_data.py [--url=<url>] [--output_path=<output_path>]
 
 Options:
 [--url=<url>]            Optional: The url of the data to save
-[--out_path=<out_path>]  Optional: The local path of where to save the downloaded data
+[--output_path=<output_path>]  Optional: The local path of where to save the downloaded data
 """
 
 import logging
@@ -151,4 +151,4 @@ def read_file(file_name : str) -> pd.DataFrame:
 if __name__ == "__main__":
     download_data(
         url=opt["--url"],
-        save_dir=opt["--out_path"])
+        save_dir=opt["--output_path"])
