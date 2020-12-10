@@ -16,7 +16,7 @@
   address = {Scotts Valley, CA}
 }
 
-@Manual{docoptpython,
+@Manual{python-docopt,
     title = {docopt: Command-line interface description language},
     author = {Vladimir Keleshev},
     year = {2014},
@@ -24,57 +24,42 @@
     url = {https://github.com/docopt/docopt},
 }
 
-@software{reback2020pandas,
-    author       = {The pandas development team},
-    title        = {pandas-dev/pandas: Pandas},
-    month        = feb,
-    year         = 2020,
-    publisher    = {Zenodo},
-    version      = {latest},
-    doi          = {10.5281/zenodo.3509134},
-    url          = {https://doi.org/10.5281/zenodo.3509134},
+@article{pandas,
+  title={Pandas, python data analysis library},
+  author={McKinney, Wes},
+  journal={see http://pandas. pydata. org},
+  year={2015}
 }
 
-@InProceedings{ mckinney-proc-scipy-2010,
-  author    = { {W}es {M}c{K}inney },
-  title     = { {D}ata {S}tructures for {S}tatistical {C}omputing in {P}ython },
-  booktitle = { {P}roceedings of the 9th {P}ython in {S}cience {C}onference },
-  pages     = { 56 - 61 },
-  year      = { 2010 },
-  editor    = { {S}t\'efan van der {W}alt and {J}arrod {M}illman },
-  doi       = { 10.25080/Majora-92bf1922-00a },
+@Article{ipykernel,
+	Author    = {P'erez, Fernando and Granger, Brian E.},
+	Title     = {IPython: a System for Interactive Scientific Computing},
+	Journal   = {Computing in Science and Engineering},
+	Volume    = {9},
+	Number    = {3},
+	Pages     = {21--29},
+	month     = {may},
+	year      = {2007},
+	url       = {"https://ipython.org"},
+	ISSN      = {"1521-9615"},
+	doi       = {10.1109/MCSE.2007.53},
+	publisher = {IEEE Computer Society},
 }
 
-@Article{PER-GRA:2007,
-  Author    = {P\'erez, Fernando and Granger, Brian E.},
-  Title     = {{IP}ython: a System for Interactive Scientific Computing},
-  Journal   = {Computing in Science and Engineering},
-  Volume    = {9},
-  Number    = {3},
-  Pages     = {21--29},
-  month     = may,
-  year      = 2007,
-  url       = "https://ipython.org",
-  ISSN      = "1521-9615",
-  doi       = {10.1109/MCSE.2007.53},
-  publisher = {IEEE Computer Society},
-}
-
-
-@software{machin5xlrd,
+@software{xlrd,
   title={xlrd 0.9. 0},
   author={Machin, J},
   journal={Python Package Index,[Online]. Available:https://xlrd.readthedocs.io/en/latest/#},
 }
 
-@software{Altair_Developers,
+@software{altair,
   title={altair 4.1.0},
   author={Altair Developers},
   journal={Python Package Index. Available:https://altair-viz.github.io/index.html},
   
 }
 
-@misc{pandasprofiling2019,
+@misc{pandasprofiling,
   author = {Simon Brugman},
   title = {{pandas-profiling: Exploratory Data Analysis for Python}},
   year = {2019},  
@@ -82,36 +67,39 @@
   note = "Version: 2.9.0"
 }
 
-@misc{pytestx.y,
-  title =        {pytest x.y},
+@misc{pytest,
+  title = {pytest x.y},
   author = {Krekel, Holger and Oliveira, Bruno and Pfannschmidt, Ronny and Bruynooghe, Floris and Laugher, Brianna and Bruhin, Florian},
-  year =         {2004},
+  year = {2004},
   url = {https://github.com/pytest-dev/pytest},
 }
 
 @misc{altair_saver,
-  title =        {altair saver},
+  title = {altair saver},
   author = {Jake Vanderplas},
-  year =         {2019},
+  year = {2019},
   url = {https://github.com/altair-viz/altair_saver},
 }
 
 @misc{chromedriver_binary,
-  title =        {Python Chromedriver Binary},
+  title = {Python Chromedriver Binary},
   author = {Daniel Kaiser},
-  year =         {2017},
+  year =  {2017},
   url = {https://github.com/danielkaiser/python-chromedriver-binary/blob/master/LICENSE},
 }
 
-@Manual{tidyverse,
-    title = {tidyverse: Easily Install and Load the 'Tidyverse'},
-    author = {Hadley Wickham},
-    year = {2017},
-    note = {R package version 1.2.1},
-    url = {https://CRAN.R-project.org/package=tidyverse},
+@Article{tidyverse,
+  title = {Welcome to the {tidyverse}},
+  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+  year = {2019},
+  journal = {Journal of Open Source Software},
+  volume = {4},
+  number = {43},
+  pages = {1686},
+  doi = {10.21105/joss.01686},
 }
 
-@article{wickham2015dplyr,
+@article{dplyr,
   title={dplyr: A grammar of data manipulation},
   author={Wickham, Hadley and Francois, Romain and Henry, Lionel and M{\"u}ller, Kirill and others},
   journal={R package version 0.4},
@@ -119,18 +107,17 @@
   year={2015},
 }
 
-
- @Manual{datateacher,
-     title = {datateachr: Data collected to use for teaching at the University of British Columbia},
-     author = {Hayley Boyce and Jordan Bourak},
-     year = {2020},
-     note = {R package version 0.2.1},
-     url = {https://github.com/UBC-MDS/datateachr},
-   }
+@Manual{datateacher,
+	title = {datateachr: Data collected to use for teaching at the University of British Columbia},
+	author = {Hayley Boyce and Jordan Bourak},
+	year = {2020},
+	note = {R package version 0.2.1},
+	url = {https://github.com/UBC-MDS/datateachr},
+}
 
 @Article{infer,
-    title = {Inference with Linear Equality and Inequality Constraints
-      Using {R}: The Package {ic.infer}},
+    title = {Inference with Linear Equality and Inequality Constraints 
+	Using {R}: The Package {ic.infer}},
     author = {Ulrike Gr{\"o}mping},
     journal = {Journal of Statistical Software},
     year = {2010},
@@ -147,16 +134,15 @@
     year = {2016},
     isbn = {978-3-319-24277-4},
     url = {https://ggplot2.tidyverse.org},
-  }
-  
-@Manual{purrr,
-	title = {purrr: Functional Programming Tools},
-	author = {Hadley Wickham},
-	year = {2016},
-	note = {R package version 0.2.2},
-	url = {https://CRAN.R-project.org/package=purrr},
 }
- 
+
+@Manual{purrr,
+  title = {purrr: Functional Programming Tools},
+  author = {Lionel Henry and Hadley Wickham},
+  year = {2020},
+  note = {R package version 0.3.4},
+  url = {https://CRAN.R-project.org/package=purrr},
+}
  
 @InCollection{knitr,
     booktitle = {Implementing Reproducible Computational Research},
@@ -169,17 +155,25 @@
     url = {http://www.crcpress.com/product/isbn/9781466561595},
 }
 
-@Manual{docopt,
+@Manual{r-docopt,
     title = {docopt: Command-Line Interface Specification Language},
-    author = {Edwin {de Jonge}},
+    author = {Edwin {De Jonge}},
     year = {2018},
     note = {R package version 0.6.1},
     url = {https://CRAN.R-project.org/package=docopt},
 }
 
-@misc{wickham2020svglite,
+@misc{svglite,
   title={svglite: An’SVG’graphics device},
   author={Wickham, Hadley and Henry, L and Luciani, TJ and Decorde, M and Lise, V},
   year={2020},
   publisher={R package version},
+}
+
+@Manual{rmarkdown,
+  title = {rmarkdown: Dynamic Documents for R},
+  author = {JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone},
+  year = {2020},
+  note = {R package version 2.5},
+  url = {https://github.com/rstudio/rmarkdown},
 }
