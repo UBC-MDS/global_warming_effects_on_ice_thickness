@@ -14,7 +14,6 @@ Options:
 
 library(tidyverse)
 library(dplyr, warn.conflicts = FALSE)
-library(datateachr)
 library(infer)
 library(ggplot2)
 library(purrr)
