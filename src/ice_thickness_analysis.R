@@ -14,7 +14,6 @@ Options:
 
 library(tidyverse)
 library(dplyr, warn.conflicts = FALSE)
-library(datateachr)
 library(infer)
 library(ggplot2)
 library(purrr)
@@ -30,6 +29,8 @@ main <- function() {
 
     # dir_out <- "../results"
     dir_out <- opt$dir_out
+	# create directory if it doesn't exist
+	dir.create(dir_out, recursive = TRUE, showWarnings = FALSE)
 
     # dir_in <- "../data/processed/ice_thickness.csv"
     dir_in <- opt$dir_in
