@@ -53,7 +53,7 @@ whether this difference is present throughout all months.
 
 <div class="figure" style="text-align: center">
 
-<img src="../results/density.jpg" alt="Figure 2. Distribution of Ice Thickness by Month" width="100%" />
+<img src="../results/density.svg" alt="Figure 2. Distribution of Ice Thickness by Month" width="100%" />
 <p class="caption">
 Figure 2. Distribution of Ice Thickness by Month
 </p>

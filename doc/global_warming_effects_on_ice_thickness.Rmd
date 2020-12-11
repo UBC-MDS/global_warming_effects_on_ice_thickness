@@ -40,7 +40,7 @@ The above figure shows the median ice thicknesses of the monthly station average
 Let's take a look at the density distribution to determine whether the difference in median thickness of ice is subject to a certain month or whether this difference is present throughout all months.
 
 ```{r, density, fig.cap="Figure 2. Distribution of Ice Thickness by Month", out.width = '100%'}
-knitr::include_graphics("../results/density.jpg")
+knitr::include_graphics("../results/density.svg")
 ```
 
 We can see that 1984 distribution has more mass to the right of the 1996, meaning that a higher proportion of observations that recorded thicker ice measurements. The pattern is present for all three months, however, January shows the sharpest example of this whereas the effect is less prominent in March.

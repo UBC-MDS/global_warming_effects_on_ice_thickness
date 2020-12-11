@@ -27,4 +27,5 @@ doc/global_warming_effects_on_ice_thickness.md doc/global_warming_effects_on_ice
 clean:
 	rm -rf data
 	rm -rf results
-	rm -rf doc/global_warming_effects_on_ice_thickness.md doc/global_warming_effects_on_ice_thickness.html
+	rm -rf doc/global_warming_effects_on_ice_thickness.md 
+	rm -rf doc/global_warming_effects_on_ice_thickness.html
