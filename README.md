@@ -93,6 +93,9 @@ make clean
       - svglite==1.2.3.2
       - rmarkdown==2.5
 
+## Makefile Dependency Graph
+![](makefile2graph.svg)
+
 ## License
 
 The Ice Thickness Program Collection, 1947-2002 data contains information licensed under the [Open Government Licence – Canada (version 2.0)](https://open.canada.ca/en/open-government-licence-canada).
