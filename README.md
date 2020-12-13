@@ -17,7 +17,7 @@ The dataset used in this analysis contains measurements of ice thickness at vari
 
 ## Summary Report
 
-The summary report can be found [here](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/doc/global_warming_effects_on_ice_thickness.md). 
+The summary report can be found [here](http://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/global_warming_effects_on_ice_thickness/main/doc/global_warming_effects_on_ice_thickness.html). 
 
 
 ## Usage
