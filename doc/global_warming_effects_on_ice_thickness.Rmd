@@ -1,11 +1,12 @@
 ---
 title: "Global Warming Effects on Ice Thickness"
-authors: ' Jayme Gordon, Mo Garoub, Sasha Babicki, Syad Khan </br>'
+author: Jayme Gordon, Mo Garoub , Sasha Babicki, and Syad Khan
+date: "2020-12-12"
 always_allow_html: yes
 output:
-  html_document:
-    toc: yes
   pdf_document:
+    toc: yes
+  html_document:
     toc: yes
 bibliography: ice_thickness_refs.bib
 ---

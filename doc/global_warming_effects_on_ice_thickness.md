@@ -1,5 +1,7 @@
 Global Warming Effects on Ice Thickness
 ================
+Jayme Gordon, Mo Garoub , Sasha Babicki, and Syad Khan
+2020-12-12
 
 # Summary
 
