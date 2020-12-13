@@ -1,3 +1,4 @@
+# Author: Syad Khan
 FROM rocker/tidyverse
 
 RUN apt-get update 
