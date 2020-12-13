@@ -42,7 +42,7 @@ Figure 1. Median Ice Thickness Over Time
 
 </div>
 
-The above figure shows the median ice thicknesses of the monthly station
+The figure above shows the median ice thicknesses of the monthly station
 averages from 1981 to 2002. Excluding the year 2002, there looks to be a
 downward trend from the earlier years where the median thickness is
 around 90 centimeters to the later years where it hovers around 60-70
