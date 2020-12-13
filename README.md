@@ -29,13 +29,13 @@ To replicate the analysis, clone this GitHub repository and follow the instructi
 Install [Docker](https://www.docker.com/get-started). Run the following command in the command line from the root directory of this project:
 
 ```
-docker run  -it --rm -v $(pwd):/home/ice_thickness ice_thickness_anaconda make -C /home/ice_thickness all
+docker run  -it --rm -v $(pwd):/home/ice_thickness syadk/ice-thickness:v0.3.0 make -C /home/ice_thickness all
 ```
 
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
 ```
-docker run  -it --rm -v $(pwd):/home/ice_thickness ice_thickness_anaconda make -C /home/ice_thickness clean
+docker run  -it --rm -v $(pwd):/home/ice_thickness syadk/ice-thickness:v0.3.0 make -C /home/ice_thickness clean
 ```
 
 #### 2. Without using Docker
