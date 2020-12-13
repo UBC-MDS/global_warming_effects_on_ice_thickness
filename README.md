@@ -22,7 +22,26 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 
 ## Usage
 
-To replicate the analysis, clone this GitHub repository, install all the dependencies listed under the "Dependencies" header. 
+To replicate the analysis, clone this GitHub repository and follow the instructions for one of the options below:
+
+#### 1. Using Docker
+*note - the instructions in this section also depends on running this in a unix shell (e.g., terminal or Git Bash)*
+
+Install [Docker](https://www.docker.com/get-started). Run the following command in the command line from the root directory of this project:
+
+```
+docker run --rm -v /$(pwd):/home/rstudio/global_warming_effects_on_ice_thickness ubc-mds/global_warming_effects_on_ice_thickness:v4.0 make -C /home/rstudio/global_warming_effects_on_ice_thickness all
+```
+
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+```
+docker run --rm -v /$(pwd):/home/rstudio/global_warming_effects_on_ice_thickness UBC-MDS/global_warming_effects_on_ice_thickness:v4.0 make -C /home/rstudio/global_warming_effects_on_ice_thickness clean
+```
+
+#### 2. Without using Docker
+
+Install all the dependencies listed under the "Dependencies" header. 
 
 Python dependencies can be installed using the conda environment file provided in the [522_grp_13.yaml](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/522_grp_13.yaml). To create and activate the environment, run the following commands in the command line from the root directory of this project:
 
