@@ -38,7 +38,7 @@ knitr::include_graphics("../results/median_thickness_year.svg")
 
 The figure above shows the median ice thicknesses of the monthly station averages from 1981 to 2002. Excluding the year 2002, where there were significantly fewer observations, there looks to be a downward trend from the earlier years where the median thickness is around 90 centimeters to the later years where it hovers around 60-70 centimeters. Our analysis aims to validate this trend and determine if the downward trend is statistically significant. We decided to compare median ice thickness between the years 1984 and 1996 because the years are as far apart as possible while still maintaining a large sample size.  
 
-Let's take a look at the density distribution for three months with the largest number of measurements to determine whether the difference in median thickness of ice is subject to a certain month of interest or whether this difference is present throughout all months. An exploration of additional months can be found in our ![EDA report](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/src/ice_thickness_eda.md). 
+Let's take a look at the density distribution for three months with the largest number of measurements to determine whether the difference in median thickness of ice is subject to a certain month of interest or whether this difference is present throughout all months. An exploration of additional months can be found in our [EDA report](http://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/global_warming_effects_on_ice_thickness/main/src/ice_thickness_eda.html). 
 
 ```{r, density, fig.cap="Figure 2. Distribution of Ice Thickness by Month", out.width = '100%'}
 knitr::include_graphics("../results/density.svg")

@@ -57,8 +57,8 @@ Let’s take a look at the density distribution for three months with the
 largest number of measurements to determine whether the difference in
 median thickness of ice is subject to a certain month of interest or
 whether this difference is present throughout all months. An exploration
-of additional months can be found in our ![EDA
-report](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/src/ice_thickness_eda.md).
+of additional months can be found in our [EDA
+report](http://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/global_warming_effects_on_ice_thickness/main/src/ice_thickness_eda.html).
 
 <div class="figure" style="text-align: center">
 

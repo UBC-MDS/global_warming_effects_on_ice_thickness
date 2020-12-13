@@ -53,16 +53,15 @@ def create_figures(df):
     """
     
     # first figure of mean thickness by year - bar plot
-    bar_plot = (alt.Chart(df).mark_bar(size=16).encode(
+    bar_plot = alt.Chart(df).mark_bar(size=16).encode(
         y = alt.Y("median(mean_ice_thickness)", title="Median Ice Thickness Averages(cm)"),
         x = alt.X("year:O", title="Year"))
-    .properties(background='white', 
-                title='Median Ice Thickness over Time'))
                 
-    error_bars = (alt.Chart(df).mark_errorbar(extent='stdev').encode(
+    error_bars = alt.Chart(df).mark_errorbar(extent='stdev').encode(
         y = alt.Y("median(mean_ice_thickness)"),
-        x = alt.X("year:O", title="Year")))
-    median_thickness_year = (bar_plot + error_bars)
+        x = alt.X("year:O", title="Year"))
+        
+    median_thickness_year = (bar_plot + error_bars).properties(background='white', title='Median Ice Thickness over Time')
     
     # second figure of thickness dsitribution for analysis years 
     # prepare dataframe for facetted (monthly) density plot
