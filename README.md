@@ -52,7 +52,7 @@ conda activate 522_grp_13
 R dependencies can be installed by running the following command in the R terminal:
 
 ```r
-install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite", "rmarkdown"))
+install.packages(c("tidyverse", "dplyr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite", "rmarkdown"))
 ``` 
 
 Once dependencies are installed, run the following command at the command line from the root directory of this project:
