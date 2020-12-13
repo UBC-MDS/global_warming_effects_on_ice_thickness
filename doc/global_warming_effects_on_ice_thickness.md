@@ -37,8 +37,11 @@ dataset, which spans from 1981 to 2002.
 <div class="figure" style="text-align: center">
 
 <img src="../results/median_thickness_year.svg" alt="Figure 1. Median Ice Thickness Over Time" width="75%" />
+
 <p class="caption">
+
 Figure 1. Median Ice Thickness Over Time
+
 </p>
 
 </div>
@@ -63,8 +66,11 @@ report](http://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/
 <div class="figure" style="text-align: center">
 
 <img src="../results/density.svg" alt="Figure 2. Distribution of Ice Thickness by Month" width="100%" />
+
 <p class="caption">
+
 Figure 2. Distribution of Ice Thickness by Month
+
 </p>
 
 </div>
@@ -92,12 +98,12 @@ as the median ice thickness in 1994. Our alternative hypothesis is that
 the median ice thickness in 1984 is different than median ice thickness
 in 1994.
 
-*H*<sub>0</sub> = median<sub>1984</sub> − median<sub>1994</sub> = 0
+\(H_0 = \text{median}_{1984} - \text{median}_{1994} = 0\)
 
-*H*<sub>*A*</sub> = median<sub>1984</sub> − median<sub>1994</sub> ≠ 0
+\(H_A = \text{median}_{1984} - \text{median}_{1994} \neq 0\)
 
-For our hypothesis test we chose an *α* = 0.05, however we would need to
-do further research to determine if this is the domain standard.
+For our hypothesis test we chose an \(\alpha = 0.05\), however we would
+need to do further research to determine if this is the domain standard.
 
 The analysis was completed using the R and Python programming languages
 (R Core Team 2019); (Van Rossum and Drake 2009). The R packages used to
@@ -111,8 +117,8 @@ used for the EDA and data wrangling scripts are `pandas` (McKinney
 `altair_saver` (Vanderplas 2019), `pandas-profiling` (Brugman 2019),
 `pytest` (Krekel et al. 2004), `xlrd` (Machin, n.d.), `ipykernel`
 (P’erez and Granger 2007) and `chromedriver_binary` (Kaiser 2017). The
-permutation test analysis is based on [UBC MDS 552 Lab
-2](https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd).
+permutation test analysis is based on [UBC MDS 552
+Lab 2](https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd).
 The code used to perform the analysis and create this report can be
 found here:
 [here](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness).
@@ -129,19 +135,22 @@ may yield more significant results.
 <div class="figure" style="text-align: center">
 
 <img src="../results/median_ice_thickness_ci.svg" alt="Figure 3. 95% Confidence Intervals for Median Ice Thickness in per Year in January" width="80%" />
+
 <p class="caption">
+
 Figure 3. 95% Confidence Intervals for Median Ice Thickness in per Year
 in January
+
 </p>
 
 </div>
 
 Using the permutation test we determined the p-value for January is
-0.034. Our p-value from our test of independence of a difference in
-medians using permutation was less than *α* = 0.05, so we reject our
-null hypothesis, *H*<sub>0</sub>. Based on this evidence, it appears
-that there is a statistically significant difference between the median
-ice thickness measurements of January 1984 and January 1996.
+\(0.034\). Our p-value from our test of independence of a difference in
+medians using permutation was less than \(\alpha = 0.05\), so we reject
+our null hypothesis, \(H_0\). Based on this evidence, it appears that
+there is a statistically significant difference between the median ice
+thickness measurements of January 1984 and January 1996.
 
 # Conclusion
 
@@ -166,18 +175,18 @@ further explore the changes in ice thickness over time.
 
 # References
 
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references">
 
-<div id="ref-rmarkdown" class="csl-entry">
+<div id="ref-rmarkdown">
 
 Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin
 Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and
-Richard Iannone. 2020. *Rmarkdown: Dynamic Documents for r*.
+Richard Iannone. 2020. *Rmarkdown: Dynamic Documents for R*.
 <https://github.com/rstudio/rmarkdown>.
 
 </div>
 
-<div id="ref-datateacher" class="csl-entry">
+<div id="ref-datateacher">
 
 Boyce, Hayley, and Jordan Bourak. 2020. *Datateachr: Data Collected to
 Use for Teaching at the University of British Columbia*.
@@ -185,81 +194,79 @@ Use for Teaching at the University of British Columbia*.
 
 </div>
 
-<div id="ref-pandasprofiling" class="csl-entry">
+<div id="ref-pandasprofiling">
 
-Brugman, Simon. 2019. “<span class="nocase">pandas-profiling:
-Exploratory Data Analysis for Python</span>.”
-<https://github.com/pandas-profiling/pandas-profiling>.
+Brugman, Simon. 2019. “pandas-profiling: Exploratory Data Analysis for
+Python.” <https://github.com/pandas-profiling/pandas-profiling>.
 
 </div>
 
-<div id="ref-r-docopt" class="csl-entry">
+<div id="ref-r-docopt">
 
 De Jonge, Edwin. 2018. *Docopt: Command-Line Interface Specification
 Language*. <https://CRAN.R-project.org/package=docopt>.
 
 </div>
 
-<div id="ref-altair" class="csl-entry">
+<div id="ref-altair">
 
 Developers, Altair. n.d. *Altair 4.1.0*. *Python Package Index.
-Available:https://Altair-Viz.github.io/Index.html*.
+Available:Https://Altair-Viz.github.io/Index.html*.
 
 </div>
 
-<div id="ref-infer" class="csl-entry">
+<div id="ref-infer">
 
 Grömping, Ulrike. 2010. “Inference with Linear Equality and Inequality
-Constraints Using R: The Package <span class="nocase">ic.infer</span>.”
-*Journal of Statistical Software* 33 (10): 1–31.
-<http://www.jstatsoft.org/v33/i10/>.
+Constraints Using R: The Package ic.infer.” *Journal of Statistical
+Software* 33 (10): 1–31. <http://www.jstatsoft.org/v33/i10/>.
 
 </div>
 
-<div id="ref-purrr" class="csl-entry">
+<div id="ref-purrr">
 
 Henry, Lionel, and Hadley Wickham. 2020. *Purrr: Functional Programming
 Tools*. <https://CRAN.R-project.org/package=purrr>.
 
 </div>
 
-<div id="ref-chromedriver_binary" class="csl-entry">
+<div id="ref-chromedriver_binary">
 
 Kaiser, Daniel. 2017. “Python Chromedriver Binary.”
 <https://github.com/danielkaiser/python-chromedriver-binary/blob/master/LICENSE>.
 
 </div>
 
-<div id="ref-python-docopt" class="csl-entry">
+<div id="ref-python-docopt">
 
 Keleshev, Vladimir. 2014. *Docopt: Command-Line Interface Description
 Language*. <https://github.com/docopt/docopt>.
 
 </div>
 
-<div id="ref-pytest" class="csl-entry">
+<div id="ref-pytest">
 
 Krekel, Holger, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe,
-Brianna Laugher, and Florian Bruhin. 2004. “Pytest x.y.”
+Brianna Laugher, and Florian Bruhin. 2004. “Pytest X.y.”
 <https://github.com/pytest-dev/pytest>.
 
 </div>
 
-<div id="ref-xlrd" class="csl-entry">
+<div id="ref-xlrd">
 
 Machin, J. n.d. *Xlrd 0.9. 0*. *Python Package Index,\[Online\].
-Available:https://Xlrd.readthedocs.io/En/Latest/\#*.
+Available:Https://Xlrd.readthedocs.io/En/Latest/\#*.
 
 </div>
 
-<div id="ref-pandas" class="csl-entry">
+<div id="ref-pandas">
 
 McKinney, Wes. 2015. “Pandas, Python Data Analysis Library.” *See
 Http://Pandas. Pydata. Org*.
 
 </div>
 
-<div id="ref-ipykernel" class="csl-entry">
+<div id="ref-ipykernel">
 
 P’erez, Fernando, and Brian E. Granger. 2007. “IPython: A System for
 Interactive Scientific Computing.” *Computing in Science and
@@ -267,7 +274,7 @@ Engineering* 9 (3): 21–29. <https://doi.org/10.1109/MCSE.2007.53>.
 
 </div>
 
-<div id="ref-R" class="csl-entry">
+<div id="ref-R">
 
 R Core Team. 2019. *R: A Language and Environment for Statistical
 Computing*. Vienna, Austria: R Foundation for Statistical Computing.
@@ -275,37 +282,37 @@ Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 
 </div>
 
-<div id="ref-Python" class="csl-entry">
-
-Van Rossum, Guido, and Fred L. Drake. 2009. *Python 3 Reference Manual*.
-Scotts Valley, CA: CreateSpace.
-
-</div>
-
-<div id="ref-altair_saver" class="csl-entry">
+<div id="ref-altair_saver">
 
 Vanderplas, Jake. 2019. “Altair Saver.”
 <https://github.com/altair-viz/altair_saver>.
 
 </div>
 
-<div id="ref-ggplot" class="csl-entry">
+<div id="ref-Python">
+
+Van Rossum, Guido, and Fred L. Drake. 2009. *Python 3 Reference Manual*.
+Scotts Valley, CA: CreateSpace.
+
+</div>
+
+<div id="ref-ggplot">
 
 Wickham, Hadley. 2016. *Ggplot2: Elegant Graphics for Data Analysis*.
 Springer-Verlag New York. <https://ggplot2.tidyverse.org>.
 
 </div>
 
-<div id="ref-tidyverse" class="csl-entry">
+<div id="ref-tidyverse">
 
 Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
 D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
-“Welcome to the <span class="nocase">tidyverse</span>.” *Journal of Open
-Source Software* 4 (43): 1686. <https://doi.org/10.21105/joss.01686>.
+“Welcome to the tidyverse.” *Journal of Open Source Software* 4 (43):
+1686. <https://doi.org/10.21105/joss.01686>.
 
 </div>
 
-<div id="ref-dplyr" class="csl-entry">
+<div id="ref-dplyr">
 
 Wickham, Hadley, Romain Francois, Lionel Henry, Kirill Müller, and
 others. 2015. “Dplyr: A Grammar of Data Manipulation.” *R Package
@@ -313,14 +320,14 @@ Version 0.4* 3.
 
 </div>
 
-<div id="ref-svglite" class="csl-entry">
+<div id="ref-svglite">
 
 Wickham, Hadley, L Henry, TJ Luciani, M Decorde, and V Lise. 2020.
 “Svglite: An’SVG’graphics Device.” R package version.
 
 </div>
 
-<div id="ref-knitr" class="csl-entry">
+<div id="ref-knitr">
 
 Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research
 in R.” In *Implementing Reproducible Computational Research*, edited by
