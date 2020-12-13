@@ -25,7 +25,6 @@ The summary report can be found [here](https://github.com/UBC-MDS/global_warming
 To replicate the analysis, clone this GitHub repository and follow the instructions for one of the options below:
 
 #### 1. Using Docker
-*note - the instructions in this section also depends on running this in a unix shell (e.g., terminal or Git Bash)*
 
 Install [Docker](https://www.docker.com/get-started). Run the following command in the command line from the root directory of this project:
 
