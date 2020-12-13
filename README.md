@@ -17,7 +17,7 @@ The dataset used in this analysis contains measurements of ice thickness at vari
 
 ## Summary Report
 
-The summary report can be found [here](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/doc/global_warming_effects_on_ice_thickness.md). 
+The summary report can be found [here](http://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/global_warming_effects_on_ice_thickness/main/doc/global_warming_effects_on_ice_thickness.html). 
 
 
 ## Usage
@@ -52,7 +52,7 @@ conda activate 522_grp_13
 R dependencies can be installed by running the following command in the R terminal:
 
 ```r
-install.packages(c("tidyverse", "dplyr", "datateachr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite", "rmarkdown"))
+install.packages(c("tidyverse", "dplyr", "infer", "ggplot2", "purrr", "knitr", "docopt", "svglite", "rmarkdown"))
 ``` 
 
 Once dependencies are installed, run the following command at the command line from the root directory of this project:
