@@ -31,7 +31,8 @@ Canada and the specific dataset we are using is publicly available
 
 ## Analysis
 
-First let’s have a look at the median ice thickness from 1981 to 2002.
+First let’s have a look at the median ice thickness for the entire
+dataset, which spans from 1981 to 2002.
 
 <div class="figure" style="text-align: center">
 
@@ -43,15 +44,21 @@ Figure 1. Median Ice Thickness Over Time
 </div>
 
 The figure above shows the median ice thicknesses of the monthly station
-averages from 1981 to 2002. Excluding the year 2002, there looks to be a
-downward trend from the earlier years where the median thickness is
-around 90 centimeters to the later years where it hovers around 60-70
-centimeters. Our analysis aims to validate this trend and determine if
-the downward trend is statistically significant.
+averages from 1981 to 2002. Excluding the year 2002, where there were
+significantly fewer observations, there looks to be a downward trend
+from the earlier years where the median thickness is around 90
+centimeters to the later years where it hovers around 60-70 centimeters.
+Our analysis aims to validate this trend and determine if the downward
+trend is statistically significant. We decided to compare median ice
+thickness between the years 1984 and 1996 because the years are as far
+apart as possible while still maintaining a large sample size.
 
-Let’s take a look at the density distribution to determine whether the
-difference in median thickness of ice is subject to a certain month or
-whether this difference is present throughout all months.
+Let’s take a look at the density distribution for three months with the
+largest number of measurements to determine whether the difference in
+median thickness of ice is subject to a certain month of interest or
+whether this difference is present throughout all months. An exploration
+of additional months can be found in our ![EDA
+report](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness/blob/main/src/ice_thickness_eda.md).
 
 <div class="figure" style="text-align: center">
 
@@ -69,7 +76,7 @@ however, January shows the sharpest example of this whereas the effect
 is less prominent in March.
 
 In this analysis, we will compare the median ice thickness measurements
-between January of 1984 and January of 1994 and conduct a hypothesis
+between January of 1984 and January of 1996 and conduct a hypothesis
 test to determine if the difference in medians is statistically
 significant. We decided to use a hypothesis test for independence of a
 difference in medians using permutation. The permutation test assumes
@@ -114,8 +121,8 @@ found here:
 
 We calculated that the difference between the sample medians of average
 ice thickness measurements by station for January of 1984 and January of
-1994 and the corresponding 95% confidence intervals. Although our
-analysis only focused on January 1984 vs January of 1994, we can see
+1996 and the corresponding 95% confidence intervals. Although our
+analysis only focused on January 1984 vs January of 1996, we can see
 from the plot below that there may be other combinations of years which
 may yield more significant results.
 
@@ -134,11 +141,20 @@ Using the permutation test we determined the p-value for January is
 medians using permutation was less than *α* = 0.05, so we reject our
 null hypothesis, *H*<sub>0</sub>. Based on this evidence, it appears
 that there is a statistically significant difference between the median
-ice thickness measurements of January 1984 and January 1994.
+ice thickness measurements of January 1984 and January 1996.
+
+# Conclusion
+
+Using a permutation test we were able to determine that the there is
+likely a statistically significant difference between median ice
+thickness measurements in January 1984 and January 1996. Although this
+conclusion intuitively supports the existence of global warming, we
+cannot determine if is actually part of a trend without a far more
+sophisticated analysis.
 
 A time-series experiment that looks at the relationships between
 additional months and years would be of interest for future experiments.
-Unfortunately it is beyond the scope of this project, as we do not
+Unfortunately it is beyond the scope of this project, as we have not
 covered the required methods to do such an analysis yet in MDS. As can
 be seen in the Figure 3, the years we have chosen have overlapping
 confidence intervals and the medians are not as dissimilar as other
