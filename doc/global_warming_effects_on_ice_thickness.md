@@ -61,7 +61,7 @@ largest number of measurements to determine whether the difference in
 median thickness of ice is subject to a certain month of interest or
 whether this difference is present throughout all months. An exploration
 of additional months can be found in our [EDA
-report](http://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/global_warming_effects_on_ice_thickness/main/src/ice_thickness_eda.html).
+report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UBC-MDS/global_warming_effects_on_ice_thickness/main/src/ice_thickness_eda.html).
 
 <div class="figure" style="text-align: center">
 
@@ -120,7 +120,7 @@ used for the EDA and data wrangling scripts are `pandas` (McKinney
 permutation test analysis is based on [UBC MDS 552
 Lab 2](https://github.ubc.ca/MDS-2020-21/DSCI_552_stat-inf-1_students/blob/master/solutions/lab2/lab2.Rmd).
 The code used to perform the analysis and create this report can be
-found here:
+found
 [here](https://github.com/UBC-MDS/global_warming_effects_on_ice_thickness).
 
 # Results
